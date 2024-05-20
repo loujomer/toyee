@@ -106,6 +106,7 @@ Thus, an on-premises distribution list might have a different name in the on-pre
 
 ### How Recipient Filters Work
 2 types of recipient filters:
+
 1. Precanned filters 
 2. Custom filters
 
