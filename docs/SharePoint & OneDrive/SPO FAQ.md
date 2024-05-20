@@ -8,15 +8,15 @@
 ### How to prevent site members from editing the Site Pages?
 
 option 1: for specific page
-1. gear icon -> site contents, select site pages
-2. right click on the page, manage access
-3. change the members group permission to Edit
+- gear icon -> site contents, select site pages
+- right click on the page, manage access
+- change the members group permission to Edit
 
 option 2: all pages 
-1. gear icon -> site contents -> site pages
-2. gear icon -> library settings -> more library settings
-3. permissions for this document library -> stop inhering permissions
-4. select the group/member -> edit user permissions
+- gear icon -> site contents -> site pages
+- gear icon -> library settings -> more library settings
+- permissions for this document library -> stop inhering permissions
+- select the group/member -> edit user permissions
 
 
 
@@ -27,4 +27,8 @@ option 2: all pages
 
 
 ### How to create a custom permission level in SharePoint online
->
+
+2 steps:
+1. build a custom permission level
+2. alter site security
+
