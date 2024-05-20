@@ -17,7 +17,7 @@
 > 
 > 1. gear icon -> site contents -> site pages
 > 2. gear icon -> library settings -> more library settings
-> 3. permissions for this document library -> stop inhering permissions
+> 3. permissions for this document library -> stop inheriting permissions
 > 4. select the group/member -> edit user permissions
 
 
@@ -54,5 +54,10 @@
 Note: highest level permission Wins!
 
 
+## how to set unique security on a document library in SharePoint
+
+1. navigate to the desired document library
+2. settings -> library settings -> permissions for this document -> **stop inheriting permissions**
+3. remove or grant permission
 
 
