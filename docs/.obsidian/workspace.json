@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "b7cf0f5f08e6b440",
+    "type": "split",
+    "children": [
+      {
+        "id": "4148e3b22090a03d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f49e35ec39e5514",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PowerShell/Tricks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6c511fd25ff35670",
+    "type": "split",
+    "children": [
+      {
+        "id": "44797579afb3708b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8b7bb6fa2e980e14",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fa2c2ab72865b55b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "encr",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "29f85255be3b68f7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "012cf5fb736ee82a",
+    "type": "split",
+    "children": [
+      {
+        "id": "0ab75dcac0c1c903",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3c001613e0c5235e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "PowerShell/Tricks.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "93d8fa83ce5ba71e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "PowerShell/Tricks.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "fb28e941d306d844",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "dda2b6e641469d30",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "PowerShell/Tricks.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "5f49e35ec39e5514",
+  "lastOpenFiles": [
+    "toyee/mkdocs.yml",
+    "toyee/docs/blog/posts/hello-world.md",
+    "toyee/docs/javascripts/mathjax.js",
+    "toyee/docs/Topic 1/Note 2.md",
+    "toyee/docs/Topic 1/Note 1.md",
+    "toyee/docs/Features/Text Formatting.md",
+    "toyee/docs/Features/LaTeX Math Support.md",
+    "toyee/docs/Features/Mermaid Diagrams.md",
+    "toyee/docs/blog/index.md",
+    "toyee/docs/blog/posts",
+    "toyee/docs/javascripts",
+    "toyee/docs/Topic 1",
+    "toyee/docs/index.md",
+    "toyee/docs/Features",
+    "toyee/docs/blog",
+    "toyee/docs",
+    "toyee/README.md",
+    "toyee/LICENSE",
+    "toyee/2021-11-22-22-54-02.png",
+    "toyee/2021-11-22-22-52-49.png",
+    "toyee/2021-11-22-22-49-26.png",
+    "toyee",
+    "squishy/SharePoint & OneDrive/SPO FAQ.md",
+    "squishy/SharePoint & OneDrive/SharePoint.md",
+    "squishy/SharePoint & OneDrive/B2B Collaboration.md",
+    "squishy/SharePoint & OneDrive/OneDrive.md",
+    "squishy/SharePoint & OneDrive",
+    "squishy/Purview/Encryption/Email encryption.md",
+    "squishy/PowerShell/Tricks.md",
+    "squishy/Managing Groups/Basics.md",
+    "squishy/Information Protection/Sensitivity label.md",
+    "squishy/Information Protection/Rights Management.md",
+    "squishy/assets/images/favicon.png",
+    "squishy/Teams/Teams phone/Resource accounts.md",
+    "squishy/Exchange Online/Migration/Google Workspace.md",
+    "squishy/Exchange Online/Recipients/O365 addressing.md",
+    "squishy/Exchange Online/Recipients/Distribution Lists.md",
+    "squishy/Exchange Online/Hybrid/Hybrid Exchange Architecture.md",
+    "squishy/CALLOUTS/CALLOUTS.md",
+    "squishy/docs/blog/posts/hello-world.md",
+    "squishy/2021-11-22-22-54-02.png",
+    "squishy/2021-11-22-22-52-49.png",
+    "squishy/2021-11-22-22-49-26.png",
+    "squishy/Pasted image 20240506102017.png",
+    "squishy/Pasted image 20240509193533.png",
+    "m365notes/assets/images/favicon.png",
+    "Untitled.canvas",
+    "Exchange Online/Migration/Untitled.canvas",
+    "Security/Untitled.canvas"
+  ]
+}
