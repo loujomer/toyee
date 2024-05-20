@@ -56,13 +56,13 @@
 	* when someone creates a sharing link, SharePoint uses Azure AD Invitation Manager to create a guest account in the tenant
 	* sharing link contains an invitation for that person
 
->[!tip] Site People View
+#### Site People View
 >The SharePoint browser interface keeps track of external people with whom users share resources. Sometimes, errors creep into the list of external people, such as when people enter incorrect email addresses into sharing links. 
 >
->To remove these errors and prevent them from showing up as suggested users in sharing dialogs, a site administrator can access the list by adding `/_layouts/people.aspx?MembershipGroupId=0` to the site URL. 
+>To remove these errors and prevent them from showing up as suggested users in sharing dialogs, a site administrator can access the list by adding **`/_layouts/people.aspx?MembershipGroupId=0`** to the site URL. 
 
 
-###### [SharePoint and OneDrive integration with Microsoft Entra B2B](https://learn.microsoft.com/en-us/sharepoint/sharepoint-azureb2b-integration)
+##### [SharePoint and OneDrive integration with Microsoft Entra B2B](https://learn.microsoft.com/en-us/sharepoint/sharepoint-azureb2b-integration)
 * provides authentication and management of guests
 * Authentication happens via one-time passcode
 * Enabling this integration doesn't change your sharing settings. For example, if you have site collections where external sharing is turned off, it remains off.
@@ -72,17 +72,17 @@
 
 * SharePoint and OneDrive integration with the Microsoft Entra B2B one-time passcode feature is enabled by default for new tenants.
 
-* When the integration is enabled, people outside the organization will be invited via the Azure B2B platform when sharing from SharePoin
+* When the integration is enabled, people outside the organization will be invited via the Azure B2B platform when sharing from SharePoint
 
 ## Sharing Controls
 
-###### 4 types of sharing links
+##### 4 types of sharing links
 1. Anyone
 2. New and existing guests
 3. Existing guests
 4. Only people in your organization
 
-###### Expiring Access Policy
+##### Expiring Access Policy
 * this setting applies only to sharing links, direct permission changes, and SharePoint group membership
 * does not apply to guest access to SharePoint Online sites granted through the membership of Microsoft 365 Groups
 
@@ -93,21 +93,21 @@
 * The tenant sharing setting prevails over the setting for a site. 
 * If you want to use a setting like *ExternalUserAndGuestSharing* for the site belonging to a group, you must first make sure that the organization allows anonymous sharing.
 
-###### Check the sharing capability for a group
+##### Check the sharing capability for a group
 
 `[PS] C:\>$sGroupName=”Office365forITPros” 
 `Get-SPOSite -Identity (Get-UnifiedGroup -Identity $sGroupName).SharePointSiteUrl | Select SharingCapability
 
 
-###### Display guests in people picker (off by default)
+##### Display guests in people picker (off by default)
 `[PS] C:\> Set-SPOTenant -ShowPeoplePickerSuggestionsForGuestUsers $True
 
 
-###### Find group enabled sites
+##### Find group enabled sites
 `Get-SPOSite -Template "GROUP#0" -IncludePersonalSite:$False
 
 
-###### Tracking Shared Files
+##### Tracking Shared Files
 
 `[PS] C:\> Set-SPOTenant –BccExternalSharingInvitations $True –BccExternalSharingInvitationsList administrator@Office365ITPros.com
 
