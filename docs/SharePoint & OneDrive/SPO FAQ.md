@@ -36,3 +36,23 @@
 1. build a custom permission level
 2. alter site security
 
+#### create the custom permission
+
+1. gear icon -> site permissions -> advanced permission settings
+2. click permission levels (display OOB permission levels)
+3. copy an existing permission level (select a permission level) -> scroll down, click Copy permission level
+4. provide a name, update the permissions, then create
+5. select a group, then click a custom permission
+
+**Not group connected site** (edit permission button not greyed out)
+
+**Group connected site** (edit permission greyed out)
+
+1. change the member permission to view only
+2. in the advanced permissions, click Grant permissions button
+
+Note: highest level permission Wins!
+
+
+
+

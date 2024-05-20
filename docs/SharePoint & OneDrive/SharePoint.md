@@ -93,22 +93,23 @@
 * The tenant sharing setting prevails over the setting for a site. 
 * If you want to use a setting like *ExternalUserAndGuestSharing* for the site belonging to a group, you must first make sure that the organization allows anonymous sharing.
 
-##### Check the sharing capability for a group
+### Check the sharing capability for a group
 
 `[PS] C:\>$sGroupName=”Office365forITPros” 
 `Get-SPOSite -Identity (Get-UnifiedGroup -Identity $sGroupName).SharePointSiteUrl | Select SharingCapability
 
 
-##### Display guests in people picker (off by default)
+### Display guests in people picker (off by default)
 `[PS] C:\> Set-SPOTenant -ShowPeoplePickerSuggestionsForGuestUsers $True
 
 
-##### Find group enabled sites
+### Find group enabled sites
 `Get-SPOSite -Template "GROUP#0" -IncludePersonalSite:$False
 
 
-##### Tracking Shared Files
+### Tracking Shared Files - BCC
 
 `[PS] C:\> Set-SPOTenant –BccExternalSharingInvitations $True –BccExternalSharingInvitationsList administrator@Office365ITPros.com
 
 * this will send an email each time a user shares a file stored in a SharePoint Online or OneDrive for Business document library with an external person
+
