@@ -174,50 +174,53 @@
 
 ## check user's MFA
 
-`#Import the AzureAD module`
-`Import-Module AzureAD`
-
-`#Connect to Azure AD`
-`Connect-AzureAD`
-
-`#Specify the user's UPN (User Principal Name) or Object ID`
-
-`$userUPN = "<User's UPN or Object ID>"`
-
-`#Get the user's MFA information`
-`$user = Get-AzureADUser -ObjectId $userUPN`
-
-`#Check if the user has MFA configured`
-`if ($user.StrongAuthenticationMethods.Count -gt 0) {`
-
-    # Loop through the MFA methods to find the phone number
-
-    foreach ($method in $user.StrongAuthenticationMethods) {
-
-        if ($method.MethodType -eq "Phone") {
-
-            Write-Host "MFA Phone Number: $($method.PhoneNumber)"
-            break
-        }
-    }
-`}`
-
-`else {`
-    `Write-Host "MFA is not configured for this user."`
-`}
-
-`#Disconnect from Azure AD`
-
-`Disconnect-AzureAD`
+> `#Import the AzureAD module`
+> `Import-Module AzureAD`
+> 
+> `#Connect to Azure AD`
+> `Connect-AzureAD`
+> 
+> `#Specify the user's UPN (User Principal Name) or Object ID`
+> 
+> `$userUPN = "<User's UPN or Object ID>"`
+> 
+> `#Get the user's MFA information`
+> `$user = Get-AzureADUser -ObjectId $userUPN`
+> 
+> `#Check if the user has MFA configured`
+> `if ($user.StrongAuthenticationMethods.Count -gt 0) {`
+> 
+>     # Loop through the MFA methods to find the phone number
+> 
+>     foreach ($method in $user.StrongAuthenticationMethods) {
+> 
+>         if ($method.MethodType -eq "Phone") {
+> 
+>             Write-Host "MFA Phone Number: $($method.PhoneNumber)"
+>             break
+>         }
+>     }
+> `}`
+> 
+> `else {`
+>     `Write-Host "MFA is not configured for this user."`
+> `}
+> 
+> `#Disconnect from Azure AD`
+> 
+> `Disconnect-AzureAD`
 
 
 ## enable archive mailbox for all users
 
-`Get-Mailbox -Filter {ArchiveStatus -Eq "None" -AND RecipientTypeDetails -Eq "UserMailbox"} | Enable-Mailbox -Archive`
+> `Get-Mailbox -Filter {ArchiveStatus -Eq "None" -AND RecipientTypeDetails -Eq "UserMailbox"} | Enable-Mailbox -Archive`
 
 
 ### find sharepoint sites with no group
 
- `Get-SPOSite -IncludePersonalSite:$false | Where-Object -Property groupid -eq '00000000-0000-0000-0000-000000000000'`
+>  `Get-SPOSite -IncludePersonalSite:$false | Where-Object -Property groupid -eq '00000000-0000-0000-0000-000000000000'`
+
+
+
 
 
