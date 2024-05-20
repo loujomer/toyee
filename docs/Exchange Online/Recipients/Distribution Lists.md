@@ -64,10 +64,12 @@ or for specific group type:
 ### Preventing users from creating a distribution list
 
 Option 1: uncheck the My Distribution Groups (will hide the UI of owned DLs)
+
 * uncheck the MyDistributionGroups
 * EAC -> Roles -> User Roles, either create a new role assignment policy or edit the default policy, then uncheck the 
 
 Option 2: disable the creation of new DLs but still access the existing DLs
+
 1: create a new user role assignment policy
 EAC -> Roles -> User Roles -> New role assignment policy
 
