@@ -12,6 +12,7 @@
 
 
 `# Loop through each mailbox and set the auto reply configuration`
+
 `foreach ($mailbox in $mailboxes) {`
 
 `Set-MailboxAutoReplyConfiguration -Identity $mailbox.UserPrincipalName -AutoReplyState Enabled -ExternalMessage "Your message has been received. We will get back to you soon." -InternalMessage "Your message has been received. We will get back to you soon."`
