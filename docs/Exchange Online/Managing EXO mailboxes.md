@@ -96,14 +96,29 @@ New-MgUserPhoto and Update-MgUserPhoto
 * newly created mailbox inherits the settings from the mailbox plan chosen by EXO
 * EXO uses the license assigned to the account to select the mailbox plan to apply to the new mailbox
 
-
-
 | Products | Mailbox Plan |
 | ---- | ---- |
 | Exchange Online Kiosk, Microsoft 365 F3, Office 365 F3 | ExchangeOnlineDeskless |
 | Exchange Online Plan 1, Microsoft 365 E1, Office 365 E1 | ExchangeOnline |
 | Exchange Online Plan 2, Microsoft 365 E3/E5, Office 365 E3/E5 | ExchangeOnlineEnterprise |
 | Microsoft 365 Business Basic | ExchangeOnlineEssentials |
+
+
+## Recipient Limits
+
+**500** 
+* default recipient limit in the To field, max is 1000
+
+**Set the recipient limit for a user**
+ `Set-Mailbox -Identity James.Ryan -RecipientLimits 900`
+
+
+**Set the recipient limit for all users**
+`Get-ExoMailbox -RecipientTypeDetails UserMailbox -ResultSize Unlimited | Set-Mailbox -RecipientLimits 900`
+
+
+**Set a new default recipient limit for new mailboxes**
+Set-MailboxPlan -Identity ExchangeOnlineEnterprise-8fc1c029-5e32-485e-9810-179fb4701447 -RecipientLimits 750
 
 
 
