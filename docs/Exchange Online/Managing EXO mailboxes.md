@@ -122,3 +122,34 @@ Set-MailboxPlan -Identity ExchangeOnlineEnterprise-8fc1c029-5e32-485e-9810-179fb
 
 
 
+## Email Primary and Proxy Addresses
+
+
+**set the primary SMTP address of a mailbox:** 
+
+`Set-Mailbox -Identity Jimmy.Jones -WindowsEmailAddress Jimmy@office365itpros.com`
+
+
+## Sending Email Using Proxy Addresses
+
+`Set-OrganizationConfig -SendFromAliasEnabled $True`
+
+
+
+## Custom Attributes
+
+*  these custom attributes are properties of the mailbox object associated with a user
+
+2 sets of custom attributes:
+
+1. CustomAttribute1 through CustomAttribute15: 
+	* These attributes can store a single value. 
+	* Can be updated in EAC. 
+2. ExtensionCustomAttribute1 through ExtensionCustomAttribute5: 
+	* These attributes can store multiple values. 
+	* Can only be updated in PS. 
+
+
+
+
+
