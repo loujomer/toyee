@@ -82,3 +82,28 @@ New-MgUserPhoto and Update-MgUserPhoto
 
 `Remove-UserPhoto -Identity James.Smith@office365itpros.com -Confirm:$False`
 
+
+**Prevent users from changing photo:**
+
+ `Set-OWAMailboxPolicy -Identity *OWAFullAccess* -SetPhotoEnabled $False`
+
+
+## Mailbox Plans
+
+`Get-MailboxPlan | Format-Table DisplayName, IsDefault, Name`
+
+* a template holding settings for mailbox properties
+* newly created mailbox inherits the settings from the mailbox plan chosen by EXO
+* EXO uses the license assigned to the account to select the mailbox plan to apply to the new mailbox
+
+
+
+| Products | Mailbox Plan |
+| ---- | ---- |
+| Exchange Online Kiosk, Microsoft 365 F3, Office 365 F3 | ExchangeOnlineDeskless |
+| Exchange Online Plan 1, Microsoft 365 E1, Office 365 E1 | ExchangeOnline |
+| Exchange Online Plan 2, Microsoft 365 E3/E5, Office 365 E3/E5 | ExchangeOnlineEnterprise |
+| Microsoft 365 Business Basic | ExchangeOnlineEssentials |
+
+
+
