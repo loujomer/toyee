@@ -113,3 +113,13 @@
 
 * this will send an email each time a user shares a file stored in a SharePoint Online or OneDrive for Business document library with an external person
 
+
+## Retrieve all sites belonging to private and shared channel
+
+`[array]$Sites = Get-SPOSite -Limit All | Where-Object {$_.Template -eq "TeamChannel#0" -or $_.Template -eq "TeamChannel#1"}`
+
+`ForEach ($Site in $Sites) {`
+`$SPOSite = Get-SPOSite -Identity $Site.url -Detailed`
+`$Group = Get-UnifiedGroup -Identity $SPOSite.RelatedGroupID.Guid`
+`Write-Host "Team" $Group.DisplayName "owns channel site" $Site.URL }`
+

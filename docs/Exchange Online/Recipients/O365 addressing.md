@@ -122,3 +122,9 @@ Set-UserPhoto "Ben Owens" -PictureData
 * used to control what directory objects are shown to users
 
 
+
+## Test recipient filters
+
+`Get-Recipient -RecipientType UserMailbox -RecipientPreviewFilter {CustomAttribute6 -eq` 
+`'POI'}`
+
