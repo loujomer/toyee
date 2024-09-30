@@ -123,3 +123,16 @@
 `$Group = Get-UnifiedGroup -Identity $SPOSite.RelatedGroupID.Guid`
 `Write-Host "Team" $Group.DisplayName "owns channel site" $Site.URL }`
 
+
+
+## Return all sites belonging to private and shared channels
+
+[array]$Sites = Get-SPOSite -Template "TeamChannel#1"
+
+\#retrieve the team name
+ForEach ($Site in $Sites) {
+$SPOSite = Get-SPOSite -Identity $Site.url -Detailed
+$Group = Get-UnifiedGroup -Identity $SPOSite.RelatedGroupID.Guid
+Write-Host "Team" $Group.DisplayName "owns channel site" $Site.URL }
+
+
