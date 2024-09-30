@@ -79,6 +79,109 @@ To create IP address tags
 To add domains
 * System -> Settings -> System -> Organization details
 
+-----------------
+
+# File policies in Cloud Apps
+* can monitor any file type based on more than 20 metadata filters (for example, access level, file type, and so on)
 
 
+The Microsoft Defender for Cloud Apps engine combines the following three aspects under each policy:
+1. Content scan based on preset templates or custom expressions.
+2. Context filters
+	* User roles
+	* File metadata
+	* Sharing level
+	* Organizational group integration
+	* Collaboration context
+	* Other customizable attributes
+3. Automated actions for governance and remediation.
 
+**Note**
+> The first triggered policy guarantees the ==only== governance action the system applies. For example, if a file policy has already applied a sensitivity label to a file, a second file policy can't apply another sensitivity label to it.
+
+----------------
+## Policy types
+
+1. Activity
+	* uses app APIs to monitor specific activities by users or follow unexpectedly high rates of a certain type of activity 
+
+2. File
+	* scan cloud apps for:
+		* specified file types - shared, shared with external domains
+		* data - proprietary info, personal data, credit card info, other types of data
+
+3. Malware detection
+	* identify malicious files in the cloud storage
+	* automatically approve or revoke it
+
+4. Anomaly detection
+	* look for unusual activities on the organization's cloud
+	* detection is based on risk factors you set
+	* risk factors alerts you when something happens that's outside the org's baseline or from user's activity
+
+5. App discovery
+	* set alerts to notify when new app is detected
+
+6. Access
+	* real time monitoring and control over user logins to its cloud apps
+
+7. Session
+	* real time monitoring and control oevr users activity in its cloud apps
+
+8. OAuth app
+	* enable orgs to investiagte which permissions each OAuth app requested, and then automatically approve or revoke them
+
+9. OAuth app anomaly detection
+
+------
+## Identifying Risk
+
+* you can configure any policy and alert to be associated with one of the risks below
+
+1. Threat detection
+	* Are there suspicious activities threatening your cloud environment?	
+	* detect behavior that could indicate that a user is misusing data
+2. Privileged accounts
+	* Do you need to monitor admin accounts?	
+3. Compliance
+	* Are your compliance requirements breached?	
+	* Catalog and identify sensitive or regulated data stored in file-sync services, such as sharing permissions for each file.
+4. DLP
+	* Are proprietary files shared publicly?
+	* Do you need to quarantine files?
+5. Cloud discovery
+	* Are new apps used in your organization?	
+6. Sharing control
+	* How is data shared in your cloud environment?	
+7. Access control
+	* Who accesses what from where?	
+	* Continuously monitor behavior and detect anomalous activities, including high-risk insider and external attacks
+	* Detect suspicious sign-in events, including multifactor authentication failures, disabled account sign-in failures, and impersonation events.
+	* apply a policy to alert, block, or require identity verification for any app or specific action within an app.
+	* Enables on-premises and mobile access control policies based on user, device, and geography with coarse blocking and granular view, edit, and block.
+9. Configuration control
+	* Are unauthorized changes made to your configuration?	
+
+When you create a new policy, the system automatically enables it.
+
+----
+# Manage and respond to alerts in Microsoft Defender for Cloud Apps
+
+Alerts ->  Add filter -> Status, Service/detection sources -> Microsoft Defender for Cloud Apps
+
+
+There are three types of violations you must deal with when investigating alerts:
+1. Serious violations. Require immediate response. 
+2. Questionable violations. Require further investigation. 
+3. Authorized violations or anomalous behavior. Can result from legitimate use.
+
+## Alert types
+
+1. Activity policy violation
+2. File policy violation	
+3. Compromised account
+4. Inactive account	
+5. New admin user	
+6. New admin location	
+7. New location	
+8. New discovered service	
