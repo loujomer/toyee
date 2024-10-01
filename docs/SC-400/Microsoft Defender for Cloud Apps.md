@@ -187,3 +187,72 @@ There are three types of violations you must deal with when investigating alerts
 8. New discovered service	
 9. Suspicious activity	
 10. Use of personal account	
+
+---
+# Configure Cloud Discovery
+
+#### Cloud Discovery reports
+1. Snapshot reports
+2. Continuous reports
+	- Microsoft Defender for Endpoint integration
+	- Log collector
+	- Secure Web Gateway (SWG).
+3. Reports created using the Cloud Discovery API
+
+#### Log process flow: From raw data to risk assessment
+1. Upload
+2. Parse
+3. Analyze
+4. Generate report
+
+* Cloud Discovery analyzes and updates the extracted log file data f**our times a day.**
+* The process takes between a **few minutes to several hours** depending on the amount of data processed.
+
+#### Using traffic logs for Cloud Discovery
+Cloud Discovery requires web-traffic data with the following attributes:
+
+- Date of the transaction
+- Source IP
+- Destination IP address
+- Source user - highly recommended
+- Destination URL recommended (URLs provide higher accuracy for cloud app detection than IP addresses)
+- Total amount of data (data information is highly valuable)
+- Amount of uploaded or downloaded data (provides insights about the usage patterns of the cloud apps)
+- Action taken (allowed/blocked)
+
+Traffic logs pre-requisites
+* Cloud Discovery supports the data source of your traffic logs else, define a custom parser
+* Log format matches the expected standard format (format checked upon upload by the Log tool).
+* Events aren't more than 90 days old.
+* The log file is valid and includes outbound traffic information.
+
+#### Create snapshot Cloud Discovery reports
+
+
+#### Configure automatic log upload for continuous reports
+* log collector automate log upload from your network
+* log collector runs on your network and receives logs over Syslog or FTP
+* then automatically processes, compresses, and transmits each log to the portal
+* log collector uploads FTP logs to Microsoft Defender for Cloud Apps after the file finished the FTP transfer to the log collector.
+* For Syslog, the log collector writes the received logs to the disk. Then the collector uploads the file to Microsoft Defender for Cloud Apps when the file size is larger than 40 KB
+
+* The log collector compresses data before uploading it.
+* The outbound traffic on the log collector is 10% of the size of the traffic logs it receives.
+* Once the upload process completes, Microsoft Defender for Cloud Apps moves the log to a backup directory.
+* The backup directory stores the last 20 logs and old logs are deleted if new one arrives. 
+* Whenever the log collector disk space is full, the log collector drops new logs until it has more free disk space. 
+* You should receive a warning on the Log collectors tab of the Upload logs automatically settings when this scenario occurs.
+
+---
+# Troubleshoot Cloud Discovery in Microsoft Defender for Cloud Apps
+
+https://learn.microsoft.com/en-us/training/modules/implement-app-protection-use-microsoft-defender-cloud-apps/7-troubleshoot-cloud-discovery
+#### Microsoft Defender for Endpoint integration
+
+#### Log parsing errors
+
+#### Log collector errors
+
+#### Discovery dashboard errors
+
+
