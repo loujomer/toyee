@@ -1,3 +1,5 @@
+https://learn.microsoft.com/en-us/training/modules/implement-app-protection-use-microsoft-defender-cloud-apps/1-introduction
+
 * Discover and control the use of Shadow IT
 * Protect your sensitive information anywhere in the cloud
 * Protect against cyberthreats and anomalies

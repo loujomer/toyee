@@ -1,3 +1,4 @@
+https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-governance/
 ## Know your data
 1. Describe the categories of sensitive information you want to protect
 2. Discover and classify sensitive data
@@ -73,4 +74,4 @@
 2. Retention label policies
 3. Retention policies - apply to entire workload
 
-![[Pasted image 20241003223028.png]]
+<img src="https://learn.microsoft.com/en-us/training/wwl/m365-compliance-information-governance/media/govern-your-data.png" alt="data governance">
