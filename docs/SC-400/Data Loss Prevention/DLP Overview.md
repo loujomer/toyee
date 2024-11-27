@@ -71,3 +71,104 @@ OCR settings generally take effect about an hour after being turned on.
 ### Help protect sensitive images with Microsoft Purview interactive guide
 [Interactive guide](https://mslearn.cloudguides.com/guides/Help%20protect%20sensitive%20images%20with%20Microsoft%20Purview)
 
+---
+## Define policy settings for your DLP policy
+https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-prevent-data-loss/define-policy-settings
+
+[Interactive guide](https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-prevent-data-loss/define-policy-settings)
+
+2 types of workflows when defining a DLP pollicy:
+
+1. Simple workflow
+2. Advanced workflow
+
+### Customize advanced DLP rules
+
+- **Two rules** are defined by default when you use a policy template
+	- Low volume
+	- High volume
+- If you choose the **Custom** option, you must define your own rules
+
+#### Rules includes the following:
+
+- Conditions 
+	- Content contains
+	- Content is shared from Microsoft 365 
+- Exceptions 
+- Actions 
+	- Restrict access or encrypt the content in Microsoft 365 locations
+	- Audit or restrict activities on Windows devices
+- User notifications
+- User overrides 
+- Incident reports
+- Additional options
+
+----
+## Prepare Endpoint DLP
+https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-prevent-data-loss/prepare-endpoint-dlp
+
+### License required: 
+- Microsoft 365 E5
+- Microsoft 365 A5 (EDU)
+- Microsoft 365 E5 compliance
+- Microsoft 365 A5 compliance
+- Microsoft 365 E5 information protection and governance
+- Microsoft 365 A5 information protection and governance
+
+### Onboard devices
+Purview -> **Settings** -> **Device Onboarding**
+
+Roles required for onborder:
+- Global admin
+- Security admin
+- Compliance admin
+
+### Onboarding options for Windows 10/11
+
+- Local script
+- Group policy
+- Microsoft Endpoint Configuration Manager
+- Mobile Device Management/Microsoft Intune
+- VDI onboarding scripts for non-persistent machines
+
+### Onboarding options for Mac
+
+- Microsoft Intune
+- Intune for Microsoft Defender for Endpoint customers
+- JAMF Pro
+- JAMF Pro for Microsoft Defender for Endpoint customers
+
+### Onboarding using local script
+
+- up to 10 machines only
+- local script is meant for testing purposes
+
+Steps:
+
+1. Get the configuration package .zip file (_DeviceComplianceOnboardingPackage.zip_) package from Microsoft Purview compliance portal
+2. In the navigation pane, select **Settings > Device** onboarding.
+3. In the **Deployment method** field, select **Local Script**.
+4. Select **Download package** and save the .zip file.
+5. Extract the contents of the configuration package to a location on the device you want to onboard (for example, the Desktop). You should have a file named _DeviceOnboardingScript.cmd_.
+6. Open an elevated command-line prompt on the device and run the script:
+7. Go to **Start** and type **cmd**.
+8. Right-click **Command prompt** and select **Run as administrator**.
+9. Type the location of the script file. If you copied the file to the desktop, type: _%userprofile%\Desktop\WindowsDefenderATPOnboardingScript.cmd_
+10. Press the **Enter** key or select **OK**.
+
+### Configure global Endpoint DLP settings
+
+Data loss prevention -> Data loss prevention settings -> Endpoint settings
+- apply to all existing and new DLP policies that protect content on Windows devices.
+- only apply to content impacted by DLP policies
+
+#### Settings:
+- Restricted app groups
+- Unallowed Bluetooth apps
+- Browser and domain restrictions to sensitive items
+- Additional settings for Endpoint DLP
+- Always audit file activity for devices
+- Auto-quarantine file from unallowed apps
+- Advanced classification
+- Business justification in policy tips
+
