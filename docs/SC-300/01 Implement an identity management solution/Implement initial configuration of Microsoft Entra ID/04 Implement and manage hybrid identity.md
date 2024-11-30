@@ -131,9 +131,9 @@ Use or enable **PHS** for whichever authentication method you choose, for the fo
 
 <img src="https://learn.microsoft.com/en-us/training/wwl-sci/implement-manage-hybrid-identity/media/azure-active-directory-connect-internal-0444044d.png">
 
-**Import** - the process of reading information from each directory
-**Export** - updating the directories from the provisioning engine
-**Sync** - evaluates the rules of how the objects will flow inside the provisioning engine.
+1. **Import** - the process of reading information from each directory
+2. **Export** - updating the directories from the provisioning engine
+3. **Sync** - evaluates the rules of how the objects will flow inside the provisioning engine.
 
 
 Microsoft Entra Connect uses the following staging areas, rules, and processes to allow the sync from Active Directory to Microsoft Entra ID:
