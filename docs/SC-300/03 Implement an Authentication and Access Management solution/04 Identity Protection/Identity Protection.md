@@ -47,13 +47,68 @@ report types of identity risk:
 - risk detections
 - risky workload identities
 
-## Remediate risks and unblock users
+## Remediate risks
 
 - All active risk detections contribute to the calculation of a value called _user risk level_.
-
 ##### Remediate options:
 - Self-remediation with risk policy
 - Manual password reset
 - Dismiss user risk
 - Close individual risk detections manually
 
+### Unblocking users
+
+| Unblocking based on user risk | Unblocking based on sign-in risk |
+| ---- | ---- |
+| Reset password |  |
+| Dismiss user risk |  |
+| Exclude the user from policy | Exclude the user from policy |
+| Disable policy | Disable policy |
+|  | Sign in from a familiar location or device |
+## Use the Microsoft Graph API
+
+three APIs that expose information about risky users and sign-ins:
+
+- **riskDetection**
+- **riskyUsers**
+- **signIn**
+
+---
+# Implement security for workload identities
+
+- A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user
+
+These workload identities differ from traditional user accounts as they:
+
+- Can’t perform multifactor authentication.
+- Often have no formal lifecycle process.
+- Need to store their credentials or secrets somewhere.
+### Requirements to use workload identity protection
+
+- Microsoft Entra ID Premium P2 licensing
+- Logged in user must be assigned either:
+    
+    - Global administrator
+    - Security administrator
+    - Security operator
+    - Security reader
+
+### What types of risks are detected?
+
+- Microsoft Entra threat intelligence
+- Suspicious Sign-ins
+- Unusual addition of credentials to an OAuth app
+- Admin confirmed account compromised
+- Leaked Credentials (public preview)
+
+# Explore Microsoft Defender for Identity
+
+ - uses your **on-premises Active Directory** signals to identify, detect, and investigate advanced threats, compromised identities, and malicious insider actions directed at your organization
+### Process flow for Defender for Identity
+
+<img src="https://learn.microsoft.com/en-us/training/wwl-sci/manage-azure-active-directory-identity-protection/media/defender-identity-topology-5744bbde.png">
+
+**Components of MDI:**
+- Defender for Identity portal
+- Defender for Identity sensor
+- Defender for Identity cloud service
