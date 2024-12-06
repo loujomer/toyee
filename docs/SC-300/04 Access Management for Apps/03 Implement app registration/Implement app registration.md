@@ -189,3 +189,93 @@ certain high-privilege permissions can only be granted through administrator con
 ## Requesting consent for an entire tenant
 
 -  applications must use the admin consent endpoint to request application permissions.
+
+----
+# Grant tenant-wide admin consent to applications
+
+## Grant admin consent in app registrations
+
+- In Microsoft Azure, browse to **Microsoft Entra ID** then **App registrations** then Demo app.**
+- On the **Demo app** screen, locate and copy and save each **Application (client) ID** and **Directory (tenant) ID** values so that you can use them later.
+- In the left navigation, under **Manage**, select **API permissions**.
+- Under **Configured permissions**, select **Grant admin consent**.
+
+#note Granting tenant-wide admin consent through App registrations will revoke any permissions that had previously been granted tenant-wide. Permissions previously granted by users on their own behalf will not be affected.
+
+## Grant admin consent in Enterprise apps
+
+You can grant tenant-wide admin consent through Enterprise applications if the application has already been provisioned in your tenant.
+
+
+## Construct the URL for granting tenant-wide admin consent
+
+If you know the client ID of the application (also known as the application ID), you can build the same URL to grant tenant-wide admin consent.
+
+1. The tenant-wide admin consent URL follows the following format: `https://login.microsoftonline.com/{tenant-id}/adminconsent?client_id={client-id}` where:
+    
+    - `{client-id}` is the application's client ID (also known as app ID).
+    - `{tenant-id}` is your organization's tenant ID or any verified domain name.
+2. As always, carefully review the permissions an application requests before granting consent.
+
+## Admin-restricted permissions
+
+Examples of these kinds of permissions include:
+
+- Read all user's full profiles by using User.Read.All
+- Write data to an organization's directory by using Directory.ReadWrite.All
+- Read all groups in an organization's directory by using Groups.Read.All
+
+If your app requires access to admin-restricted scopes for organizations, you should request them directly from a company administrator, also by using the admin consent endpoint. 
+
+## Using the admin consent endpoint
+
+### Request the permissions in the app registration portal
+
+### To configure the list of statically requested permissions for an application
+
+1. Go to your application in the Azure portal – App registrations experience, or create an app if you haven't already.
+2. Locate the **API Permissions** section, then select **Add a permission**.
+3. Select **Microsoft Graph** from the list of available APIs and then add the permissions that your app requires.
+4. **Save** the app registration.
+
+## Recommended: Sign the user into your app
+
+## Using permissions
+
+----
+# Implement application authorization
+
+## Application roles
+
+- Application roles are used to assign permissions to users
+- You define app roles by using the Azure portal.
+- When a user signs into the application, Microsoft Entra ID emits a roles claim for each role that the user has been granted individually and from their group membership.
+
+two ways to declare app roles by using the Azure portal:
+
+- App roles UI, then Preview
+- App manifest editor
+----
+## Declare app roles using the app roles UI
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global Administrator account.
+    
+2. Open the portal menu and then select **Identity**.
+    
+3. On the **Identity** menu, under **Applications,** select **App registrations**.
+    
+4. Select **App roles**, and then select **Create app role**.
+    
+    ![Screenshot of the  app roles configuration wizard with create app role highlighted.](https://learn.microsoft.com/en-us/training/wwl-sci/implement-app-registration/media/app-roles-create-app-role-17c8eae3.png)
+    
+5. In the **Create app role** pane, in the **Display name** box, enter **Survey Writer**.
+    
+6. Under **Allow member types**, select **User/Groups**.
+    
+7. In the **Value** box, enter **Survey.Create**.
+    
+8. In the **Description** box, enter **Writers can create surveys**.
+    
+9. Notice that the description is a mandatory field.
+    
+10. Verify the **Do you want to enable this app role** is selected and then select **Apply.**
