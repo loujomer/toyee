@@ -1,6 +1,42 @@
 # Plan your line of business application registration strategy
 
-2 representations of applications in Microsoft Entra ID:
+
+Application registration in Microsoft Entra ID is the process of ensuring that the identity system is aware of what applications are used.
+
+# Plan for app registration
+
+## Benefits of registering an app
+
+- Customize the branding of your application in the sign-in dialog
+- Decide if you want to allow users to sign in only if they belong to your organization.
+- Request scope permissions.
+- Define a scope that defines access to your web API.
+- Share a secret with the Microsoft identity platform that proves the app's identity.
+### Single tenant versus multitenant apps
+
+- Single-tenant apps are only available in the tenant they were registered in, also known as their home tenant.
+- multitenant apps are available to users in both their home tenant and other tenants.
+
+## What happens when an app is registered
+
+- After the app is registered, it's given a unique identifier that it shares with the Microsoft identity platform when it requests tokens
+-  If the app is a confidential client application, it will also share the secret or the public key depending on whether certificates or secrets were used.
+
+### Functions of Microsoft Entra ID app representation
+
+- app is identified by the authentication protocols it supports
+- provides all the identifiers, URLs, secrets, and related information that are needed to authenticate.
+
+The Microsoft identity platform:
+
+- Holds all the data required to support authentication at runtime.
+- Holds all the data for deciding what resources an app might need to access, and under what circumstances a given request should be fulfilled.
+- Provides infrastructure for implementing app provisioning within the app developer's tenant, and to any other Microsoft Entra tenant.
+- Handles user consent during token request time and facilitates the dynamic provisioning of apps across tenants.
+
+**==Consent==** is the process of a resource owner granting authorization for a client application to access protected resources, under specific permissions, on behalf of the resource owner.
+
+==2 representations of applications in Microsoft Entra ID:==
 - [application objects](https://learn.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals)
 - and service principals
 
@@ -157,6 +193,8 @@ First, follow these steps to create an example scope named Employees.Read.All:
 
 ## Scopes and permissions
 
+OAuth 2.0 is a method through which a third-party app can access web-hosted resources on behalf of a user.
+
 Any web-hosted resource (both Microsoft and 3rd party resources) that integrates with the Microsoft identity platform has a resource identifier, or _Application ID URI_
 
 In OAuth 2.0, permissions are also called _scopes_
@@ -249,6 +287,8 @@ If your app requires access to admin-restricted scopes for organizations, you sh
 
 - Application roles are used to assign permissions to users
 - You define app roles by using the Azure portal.
+- app role is a **tag** or **claim** that can be applied to a user, group, or application that will appear with the token generated when a user authenticates for an app
+- app role data in the token can then be used in the application for authorization purposes.
 - When a user signs into the application, Microsoft Entra ID emits a roles claim for each role that the user has been granted individually and from their group membership.
 
 two ways to declare app roles by using the Azure portal:
@@ -279,3 +319,22 @@ two ways to declare app roles by using the Azure portal:
 9. Notice that the description is a mandatory field.
     
 10. Verify the **Do you want to enable this app role** is selected and then select **Apply.**
+
+## Assign users and groups to roles
+
+To assign users and groups to roles by using the Azure portal:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
+2. In the Identity navigation menu on the left, open **Applications** select **Enterprise applications.**
+3. In the **All applications** list, select **Demo app**.
+4. This app was created in an earlier exercise.
+5. Under **Manage**, select **Users and groups.**
+6. On the menu, select **+ Add user/group.**
+7. On the **Add Assignment** dialog, select **Users and groups**.
+8. A list of users and security groups is displayed. You can search for a certain user or group, as well as select multiple users and groups that appear in the list.
+9. After you have selected users and groups, select **Select**.
+10. When using the **Select a role** assignment, all the roles that you've defined for the application are displayed.
+11. Choose a role and then select **Select**.
+12. Select **Assign** to finish the assignment of users and groups to the app.
+13. Confirm that the users and groups you added appear in the **Users and groups** list.
+
