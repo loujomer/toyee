@@ -76,7 +76,7 @@ three APIs that expose information about risky users and sign-ins:
 ---
 # Implement security for workload identities
 
-- A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user
+- A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user ^66fe2a
 
 These workload identities differ from traditional user accounts as they:
 

@@ -6,7 +6,7 @@
 
 by default, the Global Administrator doesn't have access to Azure resources.
 
-By default, Azure roles and Microsoft Entra roles don't span Azure and Microsoft Entra ID. However, if a Global Administrator elevates their access by choosing the **Access management for Azure resources** switch in the Azure portal, the Global Administrator will be granted the User Access Administrator role (an Azure role) on all subscriptions for a particular tenant. The User Access Administrator role enables the user to grant other users access to Azure resources. This switch can be helpful to regain access to a subscription
+By default, Azure roles and Microsoft Entra roles don't span Azure and Microsoft Entra ID. However, if a Global Administrator elevates their access by choosing the **Access management for Azure resources** switch in the Azure portal, the Global Administrator will be granted the User Access Administrator role (an Azure role) on all subscriptions for a particular tenant. The User Access Administrator role enables the user to grant other users access to Azure resources. This switch can be helpful to regain access to a subscription ^hello
 
 ## Assign roles
 
@@ -31,3 +31,6 @@ By default, Azure roles and Microsoft Entra roles don't span Azure and Microsoft
 - **Tenant Properties**
 - **User Settings**
 - **External Collaboration Settings**
+
+this is a test [[#^hello]]
+
