@@ -163,3 +163,28 @@ A domain has the following operations master roles - **Get-ADDomain**
 
 ## Manage AD DS operations masters
 
+transferring the role - planned transfer
+seizing the role - emergency transfer
+
+### Transfer operations master roles
+
+==You can transfer operations master roles by using the AD DS snap-ins== that the following table lists. You cannot use AD DS snap-ins to seize operations master roles. Instead, you must use either the **ntdsutil.exe** command-line tool or Windows PowerShell to seize roles.
+
+|**Role**|**Snap-in**|
+|---|---|
+|Schema master|Active Directory Schema|
+|Domain-naming master|Active Directory Domains and Trusts|
+|Infrastructure master|Active Directory Users and Computers|
+|RID master|Active Directory Users and Computers|
+|PDC emulator master|Active Directory Users and Computers|
+
+Seizing a role using PowerShell:
+
+`Move-ADDirectoryServerOperationsMasterRole -Identity "<servername>" -OperationsMasterRole "<rolenamelist>" -Force
+
+**servername**: The name of the target domain controller to which you are transferring one or more roles.
+**rolenamelist**: A comma-separated list of AD DS role names to move to the target server.
+**-==Force**==: An optional parameter that you include to seize a role instead of transferring it.
+
+Video here: [Manage Active Directory Domain Services operations masters - Training | Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/deploy-manage-active-directory-domain-services-domain-controllers/6-operations-masters)
+
