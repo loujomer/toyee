@@ -1,0 +1,3326 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../02%20Implement%20and%20monitor%20the%20integration%20of%20enterprise%20apps%20for%20SSO/Implement%20and%20monitor%20the%20integration%20of%20enterprise%20apps%20for%20SSO/">
+      
+      
+        <link rel="next" href="../../../../SC-400/Microsoft%20Defender%20for%20Cloud%20Apps/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Plan your line of business application registration strategy - obsidian-mkdocs template</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plan-your-line-of-business-application-registration-strategy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="obsidian-mkdocs template" class="md-header__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plan your line of business application registration strategy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="obsidian-mkdocs template" class="md-nav__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    obsidian-mkdocs template
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Obsidian Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linking%20notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linking notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AD DS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AD DS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 Deploy and manage Active Directory Domain Services domain controllers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 Deploy and manage Active Directory Domain Services domain controllers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AD%20DS/01%20Deploy%20and%20manage%20Active%20Directory%20Domain%20Services%20domain%20controllers/Define%20Active%20Directory%20Domain%20Services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Define Active Directory Domain Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 Create and manage Active Directory objects
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 Create and manage Active Directory objects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AD%20DS/02%20Create%20and%20manage%20Active%20Directory%20objects/Define%20users%2C%20groups%2C%20and%20computers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Define users, groups, and computers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exchange Online
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Exchange Online
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Managing%20EXO%20mailboxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing EXO mailboxes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hybrid
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hybrid
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Hybrid/Hybrid%20Exchange%20Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hybrid Exchange Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Migration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Migration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Migration/Google%20Workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google Workspace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Recipients
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Recipients
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Recipients/Distribution%20Lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distribution Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Recipients/O365%20addressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O365 addressing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Features/LaTeX%20Math%20Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LaTeX Math Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Features/Mermaid%20Diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mermaid diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Features/Text%20Formatting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Formatting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MS 102
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            MS 102
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 Configure your Microsoft 365 tenant
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 Configure your Microsoft 365 tenant
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MS-102/01%20Configure%20your%20Microsoft%20365%20tenant/Configure%20your%20Microsoft%20365%20tenant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure your Microsoft 365 tenant
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Managing Groups
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Managing Groups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Managing%20Groups/Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PowerShell
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PowerShell/Scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PowerShell/Tricks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tricks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC 300
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            SC 300
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 Implement an identity management solution
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 Implement an identity management solution
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_1" id="__nav_9_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Implement initial configuration of Microsoft Entra ID
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Implement initial configuration of Microsoft Entra ID
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/01%20Configure%20and%20manage%20microsoft%20entra%20roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Configure and manage microsoft entra roles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/02%20Create%2C%20configure%2C%20and%20manage%20identities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Create, configure, and manage identities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/03%20Implement%20and%20manage%20external%20identities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 Implement and manage external identities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/04%20Implement%20and%20manage%20hybrid%20identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 Implement and manage hybrid identity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/05%20Implement%20and%20manage%20federation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05 Implement and manage federation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/06%20Implement%20Microsoft%20Entra%20Connect%20Health/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 Implement Microsoft Entra Connect Health
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/07%20Manage%20Microsoft%20Entra%20Health/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07 Manage Microsoft Entra Health
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 Plan and implement identity governance strategy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 Plan and implement identity governance strategy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02%20Plan%20and%20implement%20identity%20governance%20strategy/01%20Plan%20and%20implement%20entitlement%20management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Plan and implement entitlement management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02%20Plan%20and%20implement%20identity%20governance%20strategy/02%20Plan%2C%20implement%2C%20and%20manage%20access%20review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Plan, implement, and manage access review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03 Implement an Authentication and Access Management solution
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 Implement an Authentication and Access Management solution
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_1" id="__nav_9_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 MFA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 MFA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03%20Implement%20an%20Authentication%20and%20Access%20Management%20solution/01%20MFA/What%20is%20Microsoft%20Entra%20multifactor%20authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Microsoft Entra multifactor authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_2" id="__nav_9_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 Manage user authentication
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 Manage user authentication
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03%20Implement%20an%20Authentication%20and%20Access%20Management%20solution/02%20Manage%20user%20authentication/Manage%20user%20authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage user authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_3" id="__nav_9_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03 Conditional Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 Conditional Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03%20Implement%20an%20Authentication%20and%20Access%20Management%20solution/03%20Conditional%20Access/Conditional%20Access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conditional Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_4" id="__nav_9_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    04 Identity Protection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            04 Identity Protection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03%20Implement%20an%20Authentication%20and%20Access%20Management%20solution/04%20Identity%20Protection/Identity%20Protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identity Protection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_5" id="__nav_9_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    05 Access Management for Azure Resources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            05 Access Management for Azure Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03%20Implement%20an%20Authentication%20and%20Access%20Management%20solution/05%20Access%20Management%20for%20Azure%20Resources/Access%20Management%20for%20Azure%20Resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assign Azure roles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_6" id="__nav_9_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    06 Global Secure Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            06 Global Secure Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03%20Implement%20an%20Authentication%20and%20Access%20Management%20solution/06%20Global%20Secure%20Access/Global%20Secure%20Access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Secure Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    04 Access Management for Apps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            04 Access Management for Apps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4_1" id="__nav_9_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 Plan and design the integration of enterprise apps for SSO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 Plan and design the integration of enterprise apps for SSO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01%20Plan%20and%20design%20the%20integration%20of%20enterprise%20apps%20for%20SSO/Plan%20and%20design%20the%20integration%20of%20enterprise%20apps%20for%20SSO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discover apps by using Microsoft Defender for Cloud Apps and Active Directory Federation Services app report
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4_2" id="__nav_9_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 Implement and monitor the integration of enterprise apps for SSO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 Implement and monitor the integration of enterprise apps for SSO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02%20Implement%20and%20monitor%20the%20integration%20of%20enterprise%20apps%20for%20SSO/Implement%20and%20monitor%20the%20integration%20of%20enterprise%20apps%20for%20SSO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implement token customizations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9_4_3" id="__nav_9_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03 Implement app registration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 Implement app registration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Plan your line of business application registration strategy
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC 400
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            SC 400
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Microsoft%20Defender%20for%20Cloud%20Apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Defender for Cloud Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Loss Prevention
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Loss Prevention
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Data%20Loss%20Prevention/DLP%20Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DLP Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Information Protection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Information Protection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/01.%20Intro%20to%20ISC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. Intro to ISC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/02.%20Classify%20Data%20for%20protection%20and%20Governance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Classify Data for protection and Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/03.%20Create%20and%20manage%20sensitive%20information%20types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. Create and manage sensitive information types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/04.%20Microsoft%20365%20Encryption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. Microsoft 365 Encryption
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/05.%20Deploy%20Microsoft%20Purview%20Message%20Encryption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. Deploy Microsoft Purview Message Encryption
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/06.%20Sensitivity%20labels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. Sensitivity labels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/07.%20Apply%20sensitivity%20labels%20for%20data%20protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. Apply sensitivity labels for data protection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/Misc.%20Sensitivity%20label/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Misc. Sensitivity label
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SharePoint & OneDrive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            SharePoint & OneDrive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SharePoint%20%26%20OneDrive/B2B%20Collaboration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B2B Collaboration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SharePoint%20%26%20OneDrive/OneDrive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OneDrive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SharePoint%20%26%20OneDrive/SPO%20FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPO FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SharePoint%20%26%20OneDrive/SharePoint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SharePoint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teams
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Teams
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Teams/MS-700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MS 700
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teams phone
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teams phone
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Teams/Teams%20phone/Resource%20accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    auto attendants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="plan-your-line-of-business-application-registration-strategy">Plan your line of business application registration strategy<a class="headerlink" href="#plan-your-line-of-business-application-registration-strategy" title="Permanent link">&para;</a></h1>
+<p>Application registration in Microsoft Entra ID is the process of ensuring that the identity system is aware of what applications are used.</p>
+<h1 id="plan-for-app-registration">Plan for app registration<a class="headerlink" href="#plan-for-app-registration" title="Permanent link">&para;</a></h1>
+<h2 id="benefits-of-registering-an-app">Benefits of registering an app<a class="headerlink" href="#benefits-of-registering-an-app" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Customize the branding of your application in the sign-in dialog</li>
+<li>Decide if you want to allow users to sign in only if they belong to your organization.</li>
+<li>Request scope permissions.</li>
+<li>Define a scope that defines access to your web API.</li>
+<li>Share a secret with the Microsoft identity platform that proves the app's identity.</li>
+</ul>
+<h3 id="single-tenant-versus-multitenant-apps">Single tenant versus multitenant apps<a class="headerlink" href="#single-tenant-versus-multitenant-apps" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Single-tenant apps are only available in the tenant they were registered in, also known as their home tenant.</li>
+<li>multitenant apps are available to users in both their home tenant and other tenants.</li>
+</ul>
+<h2 id="what-happens-when-an-app-is-registered">What happens when an app is registered<a class="headerlink" href="#what-happens-when-an-app-is-registered" title="Permanent link">&para;</a></h2>
+<ul>
+<li>After the app is registered, it's given a unique identifier that it shares with the Microsoft identity platform when it requests tokens</li>
+<li>If the app is a confidential client application, it will also share the secret or the public key depending on whether certificates or secrets were used.</li>
+</ul>
+<h3 id="functions-of-microsoft-entra-id-app-representation">Functions of Microsoft Entra ID app representation<a class="headerlink" href="#functions-of-microsoft-entra-id-app-representation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>app is identified by the authentication protocols it supports</li>
+<li>provides all the identifiers, URLs, secrets, and related information that are needed to authenticate.</li>
+</ul>
+<p>The Microsoft identity platform:</p>
+<ul>
+<li>Holds all the data required to support authentication at runtime.</li>
+<li>Holds all the data for deciding what resources an app might need to access, and under what circumstances a given request should be fulfilled.</li>
+<li>Provides infrastructure for implementing app provisioning within the app developer's tenant, and to any other Microsoft Entra tenant.</li>
+<li>Handles user consent during token request time and facilitates the dynamic provisioning of apps across tenants.</li>
+</ul>
+<p><strong><mark>Consent</mark></strong> is the process of a resource owner granting authorization for a client application to access protected resources, under specific permissions, on behalf of the resource owner.</p>
+<p><mark>2 representations of applications in Microsoft Entra ID:</mark>
+- <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals">application objects</a>
+- and service principals</p>
+<h2 id="what-are-application-objects">What are application objects?<a class="headerlink" href="#what-are-application-objects" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Managed in Entra ID portal under App registrations</li>
+<li>Application objects define and describe the application to Microsoft Entra ID, enabling your identity provider to know how to issue tokens to the application based on its settings.</li>
+<li>The application object will only exist in its home directory, even if it's a multitenant application supporting service principals in other directories.</li>
+<li>Any given application can have at most one application object (which is registered in a "home" directory)</li>
+</ul>
+<p>The application object includes any of the following among others:
+- Name, logo, and publisher
+- Redirect URIs
+- Secrets (symmetric and/or asymmetric keys used to authenticate the application)
+- API dependencies (OAuth)
+- Published APIs/resources/scopes (OAuth)
+- App roles (RBAC)
+- SSO metadata and configuration
+- User provisioning metadata and configuration
+- Proxy metadata and configuration</p>
+<h2 id="how-application-objects-are-created">How application objects are created?<a class="headerlink" href="#how-application-objects-are-created" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Application registrations in the Azure portal.</li>
+<li>Creating a new application using Visual Studio and configuring it to use Microsoft Entra authentication.</li>
+<li>When an admin adds an application from the app gallery (which will also create a service principal).</li>
+<li>Using the Microsoft Graph API or PowerShell to create a new application.</li>
+<li>Many other pathways, including various developer experiences in Azure and in API explorer experiences across developer centers.</li>
+</ul>
+<h2 id="what-are-service-principals">What are service principals?<a class="headerlink" href="#what-are-service-principals" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Managed in Entra ID portal under Enterprise applications</li>
+<li>Service principals govern an application connecting to Microsoft Entra ID</li>
+<li>can be considered the instance of the application in your directory</li>
+<li>any given application can have one or more service principal objects representing instances of the application in every directory in which it acts.</li>
+</ul>
+<p>The service principal can include:
+- A reference back to an application object through the application ID property.
+- Records of local user and group application-role assignments.
+- Records of local user and admin permissions granted to the application.
+    - For example: permission for the application to access a particular user's email.
+- Records of local policies including Conditional Access policy.
+- Records of alternate local settings for an application.
+    - Claims transformation rules.
+    - Attribute mappings (User provisioning).
+    - Directory-specific app roles (if the application supports custom roles).
+    - Directory-specific name or logo.</p>
+<h2 id="how-are-service-principals-created">How are service principals created?<a class="headerlink" href="#how-are-service-principals-created" title="Permanent link">&para;</a></h2>
+<ul>
+<li>When users sign in to a third-party application integrated with Microsoft Entra ID.</li>
+<li>When users sign in to Microsoft online services like Microsoft 365.</li>
+<li>When an admin adds an application from the app gallery (this will also create an underlying app object).</li>
+<li>Add an application to use the Microsoft Entra Application Proxy.</li>
+<li>Connect an application for SSO using SAML or password SSO.</li>
+<li>Programmatically via the Microsoft Graph API or PowerShell.</li>
+</ul>
+<h2 id="how-are-application-objects-and-service-principals-related-to-each-other">How are application objects and service principals related to each other?<a class="headerlink" href="#how-are-application-objects-and-service-principals-related-to-each-other" title="Permanent link">&para;</a></h2>
+<p>An application has one application object in its home directory that's referenced by one or more service principals in each of the directories where it operates (including the application's home directory).</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-sci/implement-app-registration/media/how-apps-added-azure-active-directory-12fae69b.png"></p>
+<ol>
+<li>Microsoft maintains two directories internally (shown on the left) that it uses to publish applications:<ul>
+<li>One for Microsoft Apps (Microsoft services directory).</li>
+<li>One for preintegrated third-party applications (App gallery directory).</li>
+</ul>
+</li>
+</ol>
+<p>Application publishers/vendors who integrate with Microsoft Entra ID are required to have a publishing directory (shown on the right as "Some SaaS directory").</p>
+<p>Applications that you add (represented as "App (yours)" in the diagram) include:</p>
+<ul>
+<li>Apps you developed (integrated with Microsoft Entra ID).</li>
+<li>Apps you connected for SSO.</li>
+<li>Apps you published using the Microsoft Entra Application Proxy.</li>
+</ul>
+<h3 id="notes-and-exceptions-to-service-principals">Notes and exceptions to service principals<a class="headerlink" href="#notes-and-exceptions-to-service-principals" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Not all service principals point back to an application object</li>
+<li>it's still possible to create service principals through different pathways, such as using PowerShell, without first creating an application object.</li>
+</ul>
+<h2 id="adding-a-new-app-registration">Adding a new app registration<a class="headerlink" href="#adding-a-new-app-registration" title="Permanent link">&para;</a></h2>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-sci/implement-app-registration/media/register-new-app-b56ce83d.png"></p>
+<p><strong>Process flow of the diagram</strong></p>
+<ol>
+<li>User requests to register an application – a request token is issued.</li>
+<li>Authorization endpoint sends back an Authentication.</li>
+<li>User consents to have the application registration.</li>
+<li>Service is created from the application</li>
+<li>Token returned to the user.</li>
+</ol>
+<hr />
+<h1 id="implement-application-registration">Implement application registration<a class="headerlink" href="#implement-application-registration" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Each application you want the Microsoft identity platform to perform identity and access management (IAM) for must be registered.</li>
+<li>registering it establishes a trust relationship between your application and the identity provider, the Microsoft identity platform</li>
+</ul>
+<hr />
+<h1 id="register-an-application">Register an application<a class="headerlink" href="#register-an-application" title="Permanent link">&para;</a></h1>
+<p>Registering your application establishes a trust relationship between your app and the Microsoft identity platform.</p>
+<p>The trust is <strong>unidirectional</strong>: Your app trusts the Microsoft identity platform—not the other way around.</p>
+<h2 id="add-a-redirect-uri">Add a redirect URI<a class="headerlink" href="#add-a-redirect-uri" title="Permanent link">&para;</a></h2>
+<p>A redirect URI is the location where the Microsoft identity platform redirects a user's client and sends security tokens after authentication</p>
+<h2 id="configure-platform-settings">Configure platform settings<a class="headerlink" href="#configure-platform-settings" title="Permanent link">&para;</a></h2>
+<p>To configure application settings based on the platform or device you're targeting:</p>
+<ol>
+<li>Select your application in <strong>App registrations</strong> in the Azure portal.</li>
+<li>Under <strong>Manage</strong>, select <strong>Authentication</strong>.</li>
+<li>Under <strong>Platform configurations</strong>, select <strong>Add a platform</strong>.</li>
+<li>In <strong>Configure platforms</strong>, select the tile for your application type (platform) to configure its settings.</li>
+</ol>
+<h2 id="add-credentials">Add credentials<a class="headerlink" href="#add-credentials" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Credentials are used by confidential client applications that access a web API.</li>
+<li>Examples of confidential clients:<ul>
+<li>web apps</li>
+<li>other web APIs</li>
+<li>service-type applications</li>
+<li>daemon-type applications</li>
+</ul>
+</li>
+<li>
+<p>Credentials allow your application to <strong>authenticate as itself</strong>, requiring no interaction from a user at runtime.</p>
+</li>
+<li>
+<p>You can add both <strong>certificates</strong> and <strong>client secrets</strong> (a string) as credentials to your confidential client app registration.</p>
+</li>
+</ul>
+<h2 id="add-a-certificate">Add a certificate<a class="headerlink" href="#add-a-certificate" title="Permanent link">&para;</a></h2>
+<ul>
+<li>certificates are the recommended credential type</li>
+<li>Your certificate must be one of the following file types: <code>.cer</code>, <code>.pem</code>, <code>.crt</code>.</li>
+</ul>
+<h2 id="add-a-client-secret">Add a client secret<a class="headerlink" href="#add-a-client-secret" title="Permanent link">&para;</a></h2>
+<ul>
+<li>also known as an <em>application password</em>, is a string value your app can use in place of a certificate to identity itself</li>
+<li>It's often used during development, but is considered less secure than a certificate.</li>
+</ul>
+<h2 id="add-a-scope">Add a scope<a class="headerlink" href="#add-a-scope" title="Permanent link">&para;</a></h2>
+<p>The code in a client application requests permission to perform operations defined by your web API by passing an access token along with its requests to the protected resource (the web API).</p>
+<p>First, follow these steps to create an example scope named Employees.Read.All:</p>
+<ul>
+<li>Select <strong>Microsoft Entra ID</strong>, then <strong>App registrations</strong>, and then select your API's app registration.</li>
+<li>Select <strong>Expose an API</strong>, then <strong>Add a scope</strong>.</li>
+<li>You're prompted to set an <strong>Application ID URI</strong> if you haven't yet configured one. The App ID URI acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form <code>api://</code> , or specify a more readable URI like <code>https://contoso.com/api</code>.</li>
+<li>Next, specify the scope's attributes in the <strong>Add a scope pane</strong>.</li>
+</ul>
+<hr />
+<h1 id="configure-permission-for-an-application">Configure permission for an application<a class="headerlink" href="#configure-permission-for-an-application" title="Permanent link">&para;</a></h1>
+<h2 id="scopes-and-permissions">Scopes and permissions<a class="headerlink" href="#scopes-and-permissions" title="Permanent link">&para;</a></h2>
+<p>OAuth 2.0 is a method through which a third-party app can access web-hosted resources on behalf of a user.</p>
+<p>Any web-hosted resource (both Microsoft and 3rd party resources) that integrates with the Microsoft identity platform has a resource identifier, or <em>Application ID URI</em></p>
+<p>In OAuth 2.0, permissions are also called <em>scopes</em>
+- represented in the Microsoft identity platform as a string value
+- examples;
+    - Read a user's calendar by using Calendars.Read
+    - Write to a user's calendar by using Calendars.ReadWrite
+    - Send mail as a user using by Mail.Send</p>
+<p>certain high-privilege permissions can only be granted through administrator consent and requested/granted using the administrator consent endpoint.</p>
+<h2 id="permission-types">Permission types<a class="headerlink" href="#permission-types" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Permission type</th>
+<th>Effective permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>delegated permissions</td>
+<td>- the least privileged intersection of the delegated permissions the app has been granted (via consent) and the privileges of the currently signed-in user<br>- the app can never have more privileges than the signed-in user</td>
+<td>- used by apps that have a signed-in user present<br>- the app is delegated permission to act as the signed-in user when making calls to the target resource</td>
+</tr>
+<tr>
+<td>application permissions</td>
+<td>- the full level of privileges implied by the permission<br>- For example, an app that has the <em>User.ReadWrite.All</em> application permission can update the profile of every user in the organization.</td>
+<td>- used by apps that run without a signed-in user present<br>- for example, apps that run as background services or daemons<br>- only an administrator can consent to application permissions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="openid-connect-scopes">OpenID Connect Scopes<a class="headerlink" href="#openid-connect-scopes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Openid</td>
+<td>- used by apps who performs sign-in by using OpenID Connect<br>- an app can receive a unique identifier for the user in the form of the sub claim<br>- also gives the app access to the <strong>UserInfo</strong> endpoint</td>
+</tr>
+<tr>
+<td>email</td>
+<td>- can be used with the openid scope and any others<br>- gives the app access to the user's primary email address in the form of the email claim<br>- email claim is included in a token only if an email address is associated with the user account, which isn't always the case</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>- can be used with the openid scope and any others<br>- gives the app access to user information such as user's given name, surname, preferred username, and object ID</td>
+</tr>
+<tr>
+<td>offline_access</td>
+<td>- gives your app access to resources on behalf of the user for an extended time<br>- your app can receive refresh tokens from the Microsoft identity platform token endpoint<br>- Refresh tokens are long-lived<br>- Your app can get new access tokens as older ones expire</td>
+</tr>
+<tr>
+<td>## Requesting individual user consent</td>
+<td></td>
+</tr>
+<tr>
+<td>- In an OpenID Connect or OAuth 2.0 authorization request, an app can request the permissions it needs <strong>by using the scope query parameter</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="requesting-consent-for-an-entire-tenant">Requesting consent for an entire tenant<a class="headerlink" href="#requesting-consent-for-an-entire-tenant" title="Permanent link">&para;</a></h2>
+<ul>
+<li>applications must use the admin consent endpoint to request application permissions.</li>
+</ul>
+<hr />
+<h1 id="grant-tenant-wide-admin-consent-to-applications">Grant tenant-wide admin consent to applications<a class="headerlink" href="#grant-tenant-wide-admin-consent-to-applications" title="Permanent link">&para;</a></h1>
+<h2 id="grant-admin-consent-in-app-registrations">Grant admin consent in app registrations<a class="headerlink" href="#grant-admin-consent-in-app-registrations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>In Microsoft Azure, browse to <strong>Microsoft Entra ID</strong> then <strong>App registrations</strong> then Demo app.**</li>
+<li>On the <strong>Demo app</strong> screen, locate and copy and save each <strong>Application (client) ID</strong> and <strong>Directory (tenant) ID</strong> values so that you can use them later.</li>
+<li>In the left navigation, under <strong>Manage</strong>, select <strong>API permissions</strong>.</li>
+<li>Under <strong>Configured permissions</strong>, select <strong>Grant admin consent</strong>.</li>
+</ul>
+<h1 id="note-granting-tenant-wide-admin-consent-through-app-registrations-will-revoke-any-permissions-that-had-previously-been-granted-tenant-wide-permissions-previously-granted-by-users-on-their-own-behalf-will-not-be-affected">note Granting tenant-wide admin consent through App registrations will revoke any permissions that had previously been granted tenant-wide. Permissions previously granted by users on their own behalf will not be affected.<a class="headerlink" href="#note-granting-tenant-wide-admin-consent-through-app-registrations-will-revoke-any-permissions-that-had-previously-been-granted-tenant-wide-permissions-previously-granted-by-users-on-their-own-behalf-will-not-be-affected" title="Permanent link">&para;</a></h1>
+<h2 id="grant-admin-consent-in-enterprise-apps">Grant admin consent in Enterprise apps<a class="headerlink" href="#grant-admin-consent-in-enterprise-apps" title="Permanent link">&para;</a></h2>
+<p>You can grant tenant-wide admin consent through Enterprise applications if the application has already been provisioned in your tenant.</p>
+<h2 id="construct-the-url-for-granting-tenant-wide-admin-consent">Construct the URL for granting tenant-wide admin consent<a class="headerlink" href="#construct-the-url-for-granting-tenant-wide-admin-consent" title="Permanent link">&para;</a></h2>
+<p>If you know the client ID of the application (also known as the application ID), you can build the same URL to grant tenant-wide admin consent.</p>
+<ol>
+<li>
+<p>The tenant-wide admin consent URL follows the following format: <code>https://login.microsoftonline.com/{tenant-id}/adminconsent?client_id={client-id}</code> where:</p>
+<ul>
+<li><code>{client-id}</code> is the application's client ID (also known as app ID).</li>
+<li><code>{tenant-id}</code> is your organization's tenant ID or any verified domain name.</li>
+<li>As always, carefully review the permissions an application requests before granting consent.</li>
+</ul>
+</li>
+</ol>
+<h2 id="admin-restricted-permissions">Admin-restricted permissions<a class="headerlink" href="#admin-restricted-permissions" title="Permanent link">&para;</a></h2>
+<p>Examples of these kinds of permissions include:</p>
+<ul>
+<li>Read all user's full profiles by using User.Read.All</li>
+<li>Write data to an organization's directory by using Directory.ReadWrite.All</li>
+<li>Read all groups in an organization's directory by using Groups.Read.All</li>
+</ul>
+<p>If your app requires access to admin-restricted scopes for organizations, you should request them directly from a company administrator, also by using the admin consent endpoint. </p>
+<h2 id="using-the-admin-consent-endpoint">Using the admin consent endpoint<a class="headerlink" href="#using-the-admin-consent-endpoint" title="Permanent link">&para;</a></h2>
+<h3 id="request-the-permissions-in-the-app-registration-portal">Request the permissions in the app registration portal<a class="headerlink" href="#request-the-permissions-in-the-app-registration-portal" title="Permanent link">&para;</a></h3>
+<h3 id="to-configure-the-list-of-statically-requested-permissions-for-an-application">To configure the list of statically requested permissions for an application<a class="headerlink" href="#to-configure-the-list-of-statically-requested-permissions-for-an-application" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to your application in the Azure portal – App registrations experience, or create an app if you haven't already.</li>
+<li>Locate the <strong>API Permissions</strong> section, then select <strong>Add a permission</strong>.</li>
+<li>Select <strong>Microsoft Graph</strong> from the list of available APIs and then add the permissions that your app requires.</li>
+<li><strong>Save</strong> the app registration.</li>
+</ol>
+<h2 id="recommended-sign-the-user-into-your-app">Recommended: Sign the user into your app<a class="headerlink" href="#recommended-sign-the-user-into-your-app" title="Permanent link">&para;</a></h2>
+<h2 id="using-permissions">Using permissions<a class="headerlink" href="#using-permissions" title="Permanent link">&para;</a></h2>
+<hr />
+<h1 id="implement-application-authorization">Implement application authorization<a class="headerlink" href="#implement-application-authorization" title="Permanent link">&para;</a></h1>
+<h2 id="application-roles">Application roles<a class="headerlink" href="#application-roles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Application roles are used to assign permissions to users</li>
+<li>You define app roles by using the Azure portal.</li>
+<li>app role is a <strong>tag</strong> or <strong>claim</strong> that can be applied to a user, group, or application that will appear with the token generated when a user authenticates for an app</li>
+<li>app role data in the token can then be used in the application for authorization purposes.</li>
+<li>When a user signs into the application, Microsoft Entra ID emits a roles claim for each role that the user has been granted individually and from their group membership.</li>
+</ul>
+<p>two ways to declare app roles by using the Azure portal:</p>
+<ul>
+<li>App roles UI, then Preview</li>
+<li>App manifest editor</li>
+</ul>
+<hr />
+<h2 id="declare-app-roles-using-the-app-roles-ui">Declare app roles using the app roles UI<a class="headerlink" href="#declare-app-roles-using-the-app-roles-ui" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Sign in to the <a href="https://entra.microsoft.com/">Microsoft Entra admin center</a> using a Global Administrator account.</p>
+</li>
+<li>
+<p>Open the portal menu and then select <strong>Identity</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Identity</strong> menu, under <strong>Applications,</strong> select <strong>App registrations</strong>.</p>
+</li>
+<li>
+<p>Select <strong>App roles</strong>, and then select <strong>Create app role</strong>.</p>
+<p><img alt="Screenshot of the  app roles configuration wizard with create app role highlighted." src="https://learn.microsoft.com/en-us/training/wwl-sci/implement-app-registration/media/app-roles-create-app-role-17c8eae3.png" /></p>
+</li>
+<li>
+<p>In the <strong>Create app role</strong> pane, in the <strong>Display name</strong> box, enter <strong>Survey Writer</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Allow member types</strong>, select <strong>User/Groups</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Value</strong> box, enter <strong>Survey.Create</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Description</strong> box, enter <strong>Writers can create surveys</strong>.</p>
+</li>
+<li>
+<p>Notice that the description is a mandatory field.</p>
+</li>
+<li>
+<p>Verify the <strong>Do you want to enable this app role</strong> is selected and then select <strong>Apply.</strong></p>
+</li>
+</ol>
+<h2 id="assign-users-and-groups-to-roles">Assign users and groups to roles<a class="headerlink" href="#assign-users-and-groups-to-roles" title="Permanent link">&para;</a></h2>
+<p>To assign users and groups to roles by using the Azure portal:</p>
+<ol>
+<li>Sign in to the <a href="https://entra.microsoft.com/">Microsoft Entra admin center</a>.</li>
+<li>In the Identity navigation menu on the left, open <strong>Applications</strong> select <strong>Enterprise applications.</strong></li>
+<li>In the <strong>All applications</strong> list, select <strong>Demo app</strong>.</li>
+<li>This app was created in an earlier exercise.</li>
+<li>Under <strong>Manage</strong>, select <strong>Users and groups.</strong></li>
+<li>On the menu, select <strong>+ Add user/group.</strong></li>
+<li>On the <strong>Add Assignment</strong> dialog, select <strong>Users and groups</strong>.</li>
+<li>A list of users and security groups is displayed. You can search for a certain user or group, as well as select multiple users and groups that appear in the list.</li>
+<li>After you have selected users and groups, select <strong>Select</strong>.</li>
+<li>When using the <strong>Select a role</strong> assignment, all the roles that you've defined for the application are displayed.</li>
+<li>Choose a role and then select <strong>Select</strong>.</li>
+<li>Select <strong>Assign</strong> to finish the assignment of users and groups to the app.</li>
+<li>Confirm that the users and groups you added appear in the <strong>Users and groups</strong> list.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

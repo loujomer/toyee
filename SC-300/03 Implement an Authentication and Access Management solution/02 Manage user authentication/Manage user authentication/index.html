@@ -1,0 +1,3984 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../01%20MFA/What%20is%20Microsoft%20Entra%20multifactor%20authentication/">
+      
+      
+        <link rel="next" href="../../03%20Conditional%20Access/Conditional%20Access/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Manage user authentication - obsidian-mkdocs template</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-each-authentication-method-works" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="obsidian-mkdocs template" class="md-header__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manage user authentication
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="obsidian-mkdocs template" class="md-nav__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    obsidian-mkdocs template
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Obsidian Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linking%20notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linking notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AD DS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AD DS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 Deploy and manage Active Directory Domain Services domain controllers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 Deploy and manage Active Directory Domain Services domain controllers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AD%20DS/01%20Deploy%20and%20manage%20Active%20Directory%20Domain%20Services%20domain%20controllers/Define%20Active%20Directory%20Domain%20Services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Define Active Directory Domain Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 Create and manage Active Directory objects
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 Create and manage Active Directory objects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AD%20DS/02%20Create%20and%20manage%20Active%20Directory%20objects/Define%20users%2C%20groups%2C%20and%20computers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Define users, groups, and computers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exchange Online
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Exchange Online
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Managing%20EXO%20mailboxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing EXO mailboxes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hybrid
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hybrid
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Hybrid/Hybrid%20Exchange%20Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hybrid Exchange Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Migration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Migration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Migration/Google%20Workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google Workspace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Recipients
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Recipients
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Recipients/Distribution%20Lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distribution Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Exchange%20Online/Recipients/O365%20addressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O365 addressing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Features/LaTeX%20Math%20Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LaTeX Math Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Features/Mermaid%20Diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mermaid diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Features/Text%20Formatting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Formatting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MS 102
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            MS 102
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 Configure your Microsoft 365 tenant
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 Configure your Microsoft 365 tenant
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MS-102/01%20Configure%20your%20Microsoft%20365%20tenant/Configure%20your%20Microsoft%20365%20tenant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure your Microsoft 365 tenant
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Managing Groups
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Managing Groups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Managing%20Groups/Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PowerShell
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PowerShell/Scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PowerShell/Tricks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tricks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC 300
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            SC 300
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 Implement an identity management solution
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 Implement an identity management solution
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_1" id="__nav_9_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Implement initial configuration of Microsoft Entra ID
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Implement initial configuration of Microsoft Entra ID
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/01%20Configure%20and%20manage%20microsoft%20entra%20roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Configure and manage microsoft entra roles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/02%20Create%2C%20configure%2C%20and%20manage%20identities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Create, configure, and manage identities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/03%20Implement%20and%20manage%20external%20identities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 Implement and manage external identities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/04%20Implement%20and%20manage%20hybrid%20identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 Implement and manage hybrid identity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/05%20Implement%20and%20manage%20federation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05 Implement and manage federation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/06%20Implement%20Microsoft%20Entra%20Connect%20Health/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 Implement Microsoft Entra Connect Health
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01%20Implement%20an%20identity%20management%20solution/Implement%20initial%20configuration%20of%20Microsoft%20Entra%20ID/07%20Manage%20Microsoft%20Entra%20Health/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07 Manage Microsoft Entra Health
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 Plan and implement identity governance strategy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 Plan and implement identity governance strategy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02%20Plan%20and%20implement%20identity%20governance%20strategy/01%20Plan%20and%20implement%20entitlement%20management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Plan and implement entitlement management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02%20Plan%20and%20implement%20identity%20governance%20strategy/02%20Plan%2C%20implement%2C%20and%20manage%20access%20review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Plan, implement, and manage access review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03 Implement an Authentication and Access Management solution
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 Implement an Authentication and Access Management solution
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_1" id="__nav_9_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 MFA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 MFA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01%20MFA/What%20is%20Microsoft%20Entra%20multifactor%20authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Microsoft Entra multifactor authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_2" id="__nav_9_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 Manage user authentication
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 Manage user authentication
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Manage user authentication
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Manage user authentication
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-each-authentication-method-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How each authentication method works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-fido2-fast-identity-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is FIDO2 (Fast IDentity Online)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-fido2-security-key-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable FIDO2 security key method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable FIDO2 security key method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-user-registration-and-fido2-security-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage user registration and FIDO2 security keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-authenticator-app-and-oath-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Authenticator app and OATH tokens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Authenticator app and OATH tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-authentication-oath-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Authentication (OATH) tokens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-an-authentication-solution-based-on-windows-hello-for-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement an authentication solution based on Windows Hello for Business
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement an authentication solution based on Windows Hello for Business">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-windows-hello-for-business-works-key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Windows Hello for Business works: key points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-security-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating security groups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-if-your-environment-has-one-or-more-windows-server-2016-domain-controllers-in-the-domain-to-which-you-are-deploying-windows-hello-for-business-then-skip-the-create-the-keycredentials-admins-security-group-domains-that-include-windows-server-2016-domain-controllers-use-the-keyadmins-group-which-is-created-during-the-installation-of-the-first-windows-server-2016-domain-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note If your environment has one or more Windows Server 2016 domain controllers in the domain to which you are deploying Windows Hello for Business, then skip the Create the KeyCredentials Admins Security Group. Domains that include Windows Server 2016 domain controllers use the KeyAdmins group, which is created during the installation of the first Windows Server 2016 domain controller.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Note If your environment has one or more Windows Server 2016 domain controllers in the domain to which you are deploying Windows Hello for Business, then skip the Create the KeyCredentials Admins Security Group. Domains that include Windows Server 2016 domain controllers use the KeyAdmins group, which is created during the installation of the first Windows Server 2016 domain controller.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-keycredential-admins-security-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the KeyCredential Admins security group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-windows-hello-for-business-users-security-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the Windows Hello for Business Users security group
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sspr" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSPR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSPR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-self-service-password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable self-service password reset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-for-self-service-password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register for self-service password reset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-self-service-password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test self-service password reset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-and-manage-password-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy and manage password protection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy and manage password protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-microsoft-entra-password-protection-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Microsoft Entra Password Protection works
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-microsoft-entra-password-protection-can-only-validate-passwords-during-password-change-or-set-operations-passwords-that-were-accepted-and-stored-in-active-directory-prior-to-the-deployment-of-microsoft-entra-password-protection-will-never-be-validated-and-will-continue-working-as-is-over-time-all-users-and-accounts-will-eventually-start-using-microsoft-entra-password-protection-validated-passwords-as-their-existing-passwords-expire-accounts-configured-with-password-never-expires-are-exempt-from-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note Microsoft Entra Password Protection can only validate passwords during password change or set operations. Passwords that were accepted and stored in Active Directory prior to the deployment of Microsoft Entra Password Protection will never be validated and will continue working as is. Over time, all users and accounts will eventually start using Microsoft Entra Password Protection-validated passwords as their existing passwords expire. Accounts configured with "password never expires" are exempt from this.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Note Microsoft Entra Password Protection can only validate passwords during password change or set operations. Passwords that were accepted and stored in Active Directory prior to the deployment of Microsoft Entra Password Protection will never be validated and will continue working as is. Over time, all users and accounts will eventually start using Microsoft Entra Password Protection-validated passwords as their existing passwords expire. Accounts configured with "password never expires" are exempt from this.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-forest-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple forest considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-only-domain-controller-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-only domain controller considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-availability-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      High availability considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-entra-password-protection-dc-agent-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Entra Password Protection DC agent requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-entra-password-protection-proxy-service-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Entra Password Protection proxy service requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warning-you-should-never-install-microsoft-entra-password-protection-proxy-and-application-proxy-on-the-same-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      WARNING You should never install Microsoft Entra Password Protection Proxy and Application Proxy on the same machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WARNING You should never install Microsoft Entra Password Protection Proxy and Application Proxy on the same machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-required-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download required software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-and-configure-the-proxy-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install and configure the proxy service
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-smart-lockout-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure smart lockout thresholds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-kerberos-and-certificate-based-authentication-in-microsoft-entra-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement Kerberos and certificate-based authentication in Microsoft Entra ID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement Kerberos and certificate-based authentication in Microsoft Entra ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kerberos-authentication-process-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kerberos authentication process flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-microsoft-entra-user-authentication-for-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Microsoft Entra user authentication for virtual machines
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_3" id="__nav_9_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03 Conditional Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 Conditional Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03%20Conditional%20Access/Conditional%20Access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conditional Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_4" id="__nav_9_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    04 Identity Protection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            04 Identity Protection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04%20Identity%20Protection/Identity%20Protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identity Protection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_5" id="__nav_9_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    05 Access Management for Azure Resources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            05 Access Management for Azure Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05%20Access%20Management%20for%20Azure%20Resources/Access%20Management%20for%20Azure%20Resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assign Azure roles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3_6" id="__nav_9_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    06 Global Secure Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            06 Global Secure Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06%20Global%20Secure%20Access/Global%20Secure%20Access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Secure Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    04 Access Management for Apps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            04 Access Management for Apps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4_1" id="__nav_9_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 Plan and design the integration of enterprise apps for SSO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 Plan and design the integration of enterprise apps for SSO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04%20Access%20Management%20for%20Apps/01%20Plan%20and%20design%20the%20integration%20of%20enterprise%20apps%20for%20SSO/Plan%20and%20design%20the%20integration%20of%20enterprise%20apps%20for%20SSO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discover apps by using Microsoft Defender for Cloud Apps and Active Directory Federation Services app report
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4_2" id="__nav_9_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 Implement and monitor the integration of enterprise apps for SSO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 Implement and monitor the integration of enterprise apps for SSO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04%20Access%20Management%20for%20Apps/02%20Implement%20and%20monitor%20the%20integration%20of%20enterprise%20apps%20for%20SSO/Implement%20and%20monitor%20the%20integration%20of%20enterprise%20apps%20for%20SSO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implement token customizations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4_3" id="__nav_9_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03 Implement app registration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 Implement app registration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04%20Access%20Management%20for%20Apps/03%20Implement%20app%20registration/Implement%20app%20registration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan your line of business application registration strategy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC 400
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            SC 400
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Microsoft%20Defender%20for%20Cloud%20Apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Defender for Cloud Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Loss Prevention
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Loss Prevention
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Data%20Loss%20Prevention/DLP%20Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DLP Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Information Protection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Information Protection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/01.%20Intro%20to%20ISC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. Intro to ISC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/02.%20Classify%20Data%20for%20protection%20and%20Governance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Classify Data for protection and Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/03.%20Create%20and%20manage%20sensitive%20information%20types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. Create and manage sensitive information types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/04.%20Microsoft%20365%20Encryption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. Microsoft 365 Encryption
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/05.%20Deploy%20Microsoft%20Purview%20Message%20Encryption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. Deploy Microsoft Purview Message Encryption
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/06.%20Sensitivity%20labels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. Sensitivity labels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/07.%20Apply%20sensitivity%20labels%20for%20data%20protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. Apply sensitivity labels for data protection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SC-400/Information%20Protection/Misc.%20Sensitivity%20label/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Misc. Sensitivity label
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SharePoint & OneDrive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            SharePoint & OneDrive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SharePoint%20%26%20OneDrive/B2B%20Collaboration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B2B Collaboration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SharePoint%20%26%20OneDrive/OneDrive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OneDrive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SharePoint%20%26%20OneDrive/SPO%20FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPO FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SharePoint%20%26%20OneDrive/SharePoint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SharePoint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teams
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Teams
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Teams/MS-700/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MS 700
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teams phone
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teams phone
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Teams/Teams%20phone/Resource%20accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    auto attendants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-each-authentication-method-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How each authentication method works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-fido2-fast-identity-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is FIDO2 (Fast IDentity Online)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-fido2-security-key-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable FIDO2 security key method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable FIDO2 security key method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-user-registration-and-fido2-security-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage user registration and FIDO2 security keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-authenticator-app-and-oath-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Authenticator app and OATH tokens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Authenticator app and OATH tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-authentication-oath-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Authentication (OATH) tokens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-an-authentication-solution-based-on-windows-hello-for-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement an authentication solution based on Windows Hello for Business
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement an authentication solution based on Windows Hello for Business">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-windows-hello-for-business-works-key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Windows Hello for Business works: key points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-security-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating security groups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-if-your-environment-has-one-or-more-windows-server-2016-domain-controllers-in-the-domain-to-which-you-are-deploying-windows-hello-for-business-then-skip-the-create-the-keycredentials-admins-security-group-domains-that-include-windows-server-2016-domain-controllers-use-the-keyadmins-group-which-is-created-during-the-installation-of-the-first-windows-server-2016-domain-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note If your environment has one or more Windows Server 2016 domain controllers in the domain to which you are deploying Windows Hello for Business, then skip the Create the KeyCredentials Admins Security Group. Domains that include Windows Server 2016 domain controllers use the KeyAdmins group, which is created during the installation of the first Windows Server 2016 domain controller.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Note If your environment has one or more Windows Server 2016 domain controllers in the domain to which you are deploying Windows Hello for Business, then skip the Create the KeyCredentials Admins Security Group. Domains that include Windows Server 2016 domain controllers use the KeyAdmins group, which is created during the installation of the first Windows Server 2016 domain controller.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-keycredential-admins-security-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the KeyCredential Admins security group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-windows-hello-for-business-users-security-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the Windows Hello for Business Users security group
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sspr" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSPR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSPR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-self-service-password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable self-service password reset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-for-self-service-password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register for self-service password reset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-self-service-password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test self-service password reset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-and-manage-password-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy and manage password protection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy and manage password protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-microsoft-entra-password-protection-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Microsoft Entra Password Protection works
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-microsoft-entra-password-protection-can-only-validate-passwords-during-password-change-or-set-operations-passwords-that-were-accepted-and-stored-in-active-directory-prior-to-the-deployment-of-microsoft-entra-password-protection-will-never-be-validated-and-will-continue-working-as-is-over-time-all-users-and-accounts-will-eventually-start-using-microsoft-entra-password-protection-validated-passwords-as-their-existing-passwords-expire-accounts-configured-with-password-never-expires-are-exempt-from-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note Microsoft Entra Password Protection can only validate passwords during password change or set operations. Passwords that were accepted and stored in Active Directory prior to the deployment of Microsoft Entra Password Protection will never be validated and will continue working as is. Over time, all users and accounts will eventually start using Microsoft Entra Password Protection-validated passwords as their existing passwords expire. Accounts configured with "password never expires" are exempt from this.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Note Microsoft Entra Password Protection can only validate passwords during password change or set operations. Passwords that were accepted and stored in Active Directory prior to the deployment of Microsoft Entra Password Protection will never be validated and will continue working as is. Over time, all users and accounts will eventually start using Microsoft Entra Password Protection-validated passwords as their existing passwords expire. Accounts configured with "password never expires" are exempt from this.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-forest-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple forest considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-only-domain-controller-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-only domain controller considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-availability-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      High availability considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-entra-password-protection-dc-agent-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Entra Password Protection DC agent requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-entra-password-protection-proxy-service-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Entra Password Protection proxy service requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warning-you-should-never-install-microsoft-entra-password-protection-proxy-and-application-proxy-on-the-same-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      WARNING You should never install Microsoft Entra Password Protection Proxy and Application Proxy on the same machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WARNING You should never install Microsoft Entra Password Protection Proxy and Application Proxy on the same machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-required-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download required software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-and-configure-the-proxy-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install and configure the proxy service
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-smart-lockout-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure smart lockout thresholds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-kerberos-and-certificate-based-authentication-in-microsoft-entra-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement Kerberos and certificate-based authentication in Microsoft Entra ID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement Kerberos and certificate-based authentication in Microsoft Entra ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kerberos-authentication-process-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kerberos authentication process flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-microsoft-entra-user-authentication-for-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Microsoft Entra user authentication for virtual machines
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h3 id="how-each-authentication-method-works">How each authentication method works<a class="headerlink" href="#how-each-authentication-method-works" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Primary authentication</strong></th>
+<th><strong>Secondary authentication</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Hello for Business</td>
+<td>Yes</td>
+<td>MFA</td>
+</tr>
+<tr>
+<td>Microsoft Authenticator app</td>
+<td>Yes (preview)</td>
+<td>MFA and SSPR</td>
+</tr>
+<tr>
+<td>FIDO2 security key</td>
+<td>Yes</td>
+<td>MFA</td>
+</tr>
+<tr>
+<td>OATH hardware tokens (preview)</td>
+<td>No</td>
+<td>MFA and SSPR</td>
+</tr>
+<tr>
+<td>OATH software tokens</td>
+<td>No</td>
+<td>MFA and SSPR</td>
+</tr>
+<tr>
+<td>SMS</td>
+<td>Yes (preview)</td>
+<td>MFA and SSPR</td>
+</tr>
+<tr>
+<td>Voice call</td>
+<td>No</td>
+<td>MFA and SSPR</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-fido2-fast-identity-online">What is FIDO2 (Fast IDentity Online)<a class="headerlink" href="#what-is-fido2-fast-identity-online" title="Permanent link">&para;</a></h2>
+<ul>
+<li>FIDO  is an open specification for passwordless authentication</li>
+<li>FIDO2 is the latest specification that incorporates the web authentication (WebAuthn) specification</li>
+<li>FIDO2 security keys are an unphishable specification-based passwordless authentication method that can come in any form factor</li>
+</ul>
+<h2 id="enable-fido2-security-key-method">Enable FIDO2 security key method<a class="headerlink" href="#enable-fido2-security-key-method" title="Permanent link">&para;</a></h2>
+<p>Entra admin -&gt; Identity -&gt; Protection -&gt; Authentication methods -&gt; Policy</p>
+<h3 id="manage-user-registration-and-fido2-security-keys">Manage user registration and FIDO2 security keys<a class="headerlink" href="#manage-user-registration-and-fido2-security-keys" title="Permanent link">&para;</a></h3>
+<p>go to aka.ms/mfasetup</p>
+<hr />
+<h1 id="explore-authenticator-app-and-oath-tokens">Explore Authenticator app and OATH tokens<a class="headerlink" href="#explore-authenticator-app-and-oath-tokens" title="Permanent link">&para;</a></h1>
+<h2 id="open-authentication-oath-tokens">Open Authentication (OATH) tokens<a class="headerlink" href="#open-authentication-oath-tokens" title="Permanent link">&para;</a></h2>
+<ul>
+<li>OATH TOTP (Time-based One Time Password) is an open standard that specifies how one-time password (OTP) codes are generated</li>
+<li>Microsoft Entra ID doesn't support OATH HOTP (Hash based), a different code generation standard</li>
+<li>OATH TOTP can be implemented using either software or hardware to generate the codes</li>
+</ul>
+<hr />
+<h1 id="implement-an-authentication-solution-based-on-windows-hello-for-business">Implement an authentication solution based on Windows Hello for Business<a class="headerlink" href="#implement-an-authentication-solution-based-on-windows-hello-for-business" title="Permanent link">&para;</a></h1>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-sci/manage-user-authentication/media/authentication-flow-d3e33dbf.png"></p>
+<h2 id="how-windows-hello-for-business-works-key-points">How Windows Hello for Business works: key points<a class="headerlink" href="#how-windows-hello-for-business-works-key-points" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Windows Hello credentials are based on certificate or asymmetrical key pair</li>
+<li>Windows Hello credentials can be bound to the device, and the token that is obtained using the credential is also bound to the device.</li>
+<li>Identity provider (such as Active Directory, Microsoft Entra ID, or a Microsoft account) validates user identity and maps the Windows Hello public key to a user account during the registration step.</li>
+<li>Keys can be generated in hardware (TPM (Trusted Platform Module) 1.2 or 2.0 for enterprises, and TPM 2.0 for consumers) or software, based on the policy.</li>
+<li>Two-factor authentication is the combination of a key or certificate tied to a device and something that the person knows (a PIN) or something that the person is (biometrics)</li>
+<li>The Windows Hello gesture doesn't roam between devices and isn't shared with the server. Biometrics templates are stored locally on a device. The PIN is never stored or shared.</li>
+<li>The private key never leaves a device when using TPM. The authenticating server has a public key that is mapped to the user account during the registration process.</li>
+<li>PIN entry and biometric gesture both trigger Windows 10 to use the private key to cryptographically sign data that is sent to the identity provider. The identity provider verifies the user's identity and authenticates the user.</li>
+<li>Personal (Microsoft account) and corporate (Active Directory or Microsoft Entra ID) accounts use a single container for keys. All keys are separated by identity providers' domains to help ensure user privacy.</li>
+<li>Certificate private keys can be protected by the Windows Hello container and the Windows Hello gesture.</li>
+</ul>
+<h2 id="creating-security-groups">Creating security groups<a class="headerlink" href="#creating-security-groups" title="Permanent link">&para;</a></h2>
+<h1 id="note-if-your-environment-has-one-or-more-windows-server-2016-domain-controllers-in-the-domain-to-which-you-are-deploying-windows-hello-for-business-then-skip-the-create-the-keycredentials-admins-security-group-domains-that-include-windows-server-2016-domain-controllers-use-the-keyadmins-group-which-is-created-during-the-installation-of-the-first-windows-server-2016-domain-controller">Note If your environment has one or more Windows Server 2016 domain controllers in the domain to which you are deploying Windows Hello for Business, then skip the Create the KeyCredentials Admins Security Group. Domains that include Windows Server 2016 domain controllers use the <strong>KeyAdmins</strong> group, which is created during the installation of the first Windows Server 2016 domain controller.<a class="headerlink" href="#note-if-your-environment-has-one-or-more-windows-server-2016-domain-controllers-in-the-domain-to-which-you-are-deploying-windows-hello-for-business-then-skip-the-create-the-keycredentials-admins-security-group-domains-that-include-windows-server-2016-domain-controllers-use-the-keyadmins-group-which-is-created-during-the-installation-of-the-first-windows-server-2016-domain-controller" title="Permanent link">&para;</a></h1>
+<h3 id="create-the-keycredential-admins-security-group">Create the KeyCredential Admins security group<a class="headerlink" href="#create-the-keycredential-admins-security-group" title="Permanent link">&para;</a></h3>
+<p>Microsoft Entra Connect synchronizes the public key on the user object created during provisioning. You assign write and read permission to this group to the Active Directory attribute. This will ensure the Microsoft Entra Connect service can add and remove keys as part of its normal workflow.</p>
+<ol>
+<li>Sign in a domain controller or management workstation with <em>Domain Admin</em> equivalent credentials.</li>
+<li>Open <strong>Active Directory Users and Computers</strong>.</li>
+<li>Select <strong>View</strong> and select <strong>Advance Features</strong>.</li>
+<li>Expand the domain node from the navigation pane.</li>
+<li>Right-select the <strong>Users</strong> container. Select <strong>New</strong>. Select <strong>Group</strong>.</li>
+<li>Type <strong>KeyCredential Admins</strong> in the <strong>Group Name</strong> text box.</li>
+<li>Select <strong>OK</strong>.</li>
+</ol>
+<h3 id="create-the-windows-hello-for-business-users-security-group">Create the Windows Hello for Business Users security group<a class="headerlink" href="#create-the-windows-hello-for-business-users-security-group" title="Permanent link">&para;</a></h3>
+<p>The Windows Hello for Business Users group is used to make it easy to deploy Windows Hello for Business in phases. You assign Group Policy and Certificate template permissions to this group to simplify the deployment by adding the users to the group. This provides users with the proper permissions to configure Windows Hello for Business and to enroll in the Windows Hello for Business authentication certificate.</p>
+<ol>
+<li>Sign in a domain controller or management workstation with <em>Domain Admin</em> equivalent credentials.</li>
+<li>Open <strong>Active Directory Users and Computers</strong>.</li>
+<li>Select <strong>View</strong> and select <strong>Advanced Features</strong>.</li>
+<li>Expand the domain node from the navigation pane.</li>
+<li>Right-select the <strong>Users</strong> container. Select <strong>New</strong>. Select <strong>Group</strong>.</li>
+<li>Type <strong>Windows Hello for Business Users</strong> in the <strong>Group Name</strong> text box.</li>
+<li>Select <strong>OK</strong>.</li>
+</ol>
+<hr />
+<h1 id="sspr">SSPR<a class="headerlink" href="#sspr" title="Permanent link">&para;</a></h1>
+<p>License required: </p>
+<ul>
+<li>Cloud based accounts<ul>
+<li>Microsoft Entra ID Premium P1 or P2 license or</li>
+<li>Microsoft 365 Business Standard</li>
+</ul>
+</li>
+<li>On-premises accounts<ul>
+<li>Microsoft Entra ID Premium P1 or P2 license</li>
+<li>Microsoft 365 Business Premium</li>
+</ul>
+</li>
+</ul>
+<h2 id="enable-self-service-password-reset">Enable self-service password reset<a class="headerlink" href="#enable-self-service-password-reset" title="Permanent link">&para;</a></h2>
+<p>Entra admin -&gt; Identity -&gt; Protection -&gt; Password reset -&gt; Manage -&gt; Properties</p>
+<h2 id="register-for-self-service-password-reset">Register for self-service password reset<a class="headerlink" href="#register-for-self-service-password-reset" title="Permanent link">&para;</a></h2>
+<p>go to aka.ms/ssprsetup</p>
+<h2 id="test-self-service-password-reset">Test self-service password reset<a class="headerlink" href="#test-self-service-password-reset" title="Permanent link">&para;</a></h2>
+<p>go to aka.ms/sspr</p>
+<hr />
+<h1 id="deploy-and-manage-password-protection">Deploy and manage password protection<a class="headerlink" href="#deploy-and-manage-password-protection" title="Permanent link">&para;</a></h1>
+<p>Microsoft Entra Password Protection provides a global and custom banned password list</p>
+<h2 id="how-microsoft-entra-password-protection-works">How Microsoft Entra Password Protection works<a class="headerlink" href="#how-microsoft-entra-password-protection-works" title="Permanent link">&para;</a></h2>
+<p>The on-premises Microsoft Entra Password Protection components work as follows:</p>
+<ol>
+<li>Each Microsoft Entra Password Protection proxy-service-instance advertises itself to the DCs in the forest by creating a <em>serviceConnectionPoint</em> object in Active Directory.</li>
+<li>Each DC Agent service for Microsoft Entra Password Protection also creates a <em>serviceConnectionPoint</em> object in Active Directory. This object is used primarily for reporting and diagnostics.</li>
+<li>The DC Agent service is responsible for initiating the download of a new password policy from Microsoft Entra. The first step is to locate a Microsoft Entra Password Protection proxy-service by querying the forest for proxy <em>serviceConnectionPoint</em> objects.</li>
+<li>When an available proxy service is found, the DC Agent sends a password policy download request to the proxy service. The proxy service in turn sends the request to Microsoft Entra, and then returns the response to the DC Agent service.</li>
+<li>After the DC Agent service receives a new password policy from Microsoft Entra, the service stores the policy in a dedicated folder at the root of its domain <em>sysvol</em> folder share. The DC Agent service also monitors this folder in case newer policies replicate in from other DC Agent services in the domain.</li>
+<li>The DC Agent service always requests a new policy at service startup. After the DC Agent service is started, it checks the age of the current locally available policy <strong>hourly</strong>. If the policy is older than one hour, the DC Agent requests a new policy from Microsoft Entra via the proxy service, as described previously. If the current policy isn't older than one hour, the DC Agent continues to use that policy.</li>
+<li>When password change events are received by a DC, <strong>the cached policy is used</strong> to determine if the new password is accepted or rejected.</li>
+</ol>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-sci/manage-user-authentication/media/azure-active-directory-password-protection-e783cbb6.png"></p>
+<h1 id="note-microsoft-entra-password-protection-can-only-validate-passwords-during-password-change-or-set-operations-passwords-that-were-accepted-and-stored-in-active-directory-prior-to-the-deployment-of-microsoft-entra-password-protection-will-never-be-validated-and-will-continue-working-as-is-over-time-all-users-and-accounts-will-eventually-start-using-microsoft-entra-password-protection-validated-passwords-as-their-existing-passwords-expire-accounts-configured-with-password-never-expires-are-exempt-from-this">Note Microsoft Entra Password Protection can only validate passwords during password change or set operations. Passwords that were accepted and stored in Active Directory prior to the deployment of Microsoft Entra Password Protection will never be validated and will continue working as is. Over time, all users and accounts will eventually start using Microsoft Entra Password Protection-validated passwords as their existing passwords expire. Accounts configured with "password never expires" are exempt from this.<a class="headerlink" href="#note-microsoft-entra-password-protection-can-only-validate-passwords-during-password-change-or-set-operations-passwords-that-were-accepted-and-stored-in-active-directory-prior-to-the-deployment-of-microsoft-entra-password-protection-will-never-be-validated-and-will-continue-working-as-is-over-time-all-users-and-accounts-will-eventually-start-using-microsoft-entra-password-protection-validated-passwords-as-their-existing-passwords-expire-accounts-configured-with-password-never-expires-are-exempt-from-this" title="Permanent link">&para;</a></h1>
+<h3 id="multiple-forest-considerations">Multiple forest considerations<a class="headerlink" href="#multiple-forest-considerations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>no additional requirements to deploy Microsoft Entra Password Protection across multiple forests</li>
+<li>Each forest is independently configured</li>
+<li>Each Microsoft Entra Password Protection proxy can only support domain controllers from the forest that it's joined to.</li>
+<li>The Microsoft Entra Password Protection software in any forest is unaware of password protection software that's deployed in other forests, regardless of Active Directory trust configurations.</li>
+</ul>
+<h3 id="read-only-domain-controller-considerations">Read-only domain controller considerations<a class="headerlink" href="#read-only-domain-controller-considerations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Password change or set events aren't processed and persisted on read-only domain controllers (RODCs)</li>
+<li>Instead, they're forwarded to writable domain controllers.</li>
+<li>You don't have to install the Microsoft Entra Password Protection DC agent software on RODCs.</li>
+<li>It's not supported to run the Microsoft Entra Password Protection proxy-service on a read-only domain controller.</li>
+</ul>
+<h3 id="high-availability-considerations">High availability considerations<a class="headerlink" href="#high-availability-considerations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Each Microsoft Entra Password Protection DC agent uses a simple round-robin-style algorithm when deciding which proxy server to call. The agent skips proxy servers that aren't responding.</li>
+<li>For most fully connected Active Directory deployments that have healthy replication of both directory and sysvol folder state, two Microsoft Entra Password Protection proxy servers is enough to ensure availability</li>
+<li>The design of the Microsoft Entra Password Protection DC agent software mitigates the usual problems that are associated with high availability. The Microsoft Entra Password Protection DC agent maintains a local cache of the most recently downloaded password policy. Even if all registered proxy servers become unavailable, the Microsoft Entra Password Protection DC agents continue to enforce their cached password policy.</li>
+<li>A reasonable update frequency for password policies in a large deployment is usually days, not hours or less. So, brief outages of the proxy servers don't cause problems for Microsoft Entra Password Protection.</li>
+</ul>
+<h2 id="deployment-requirements">Deployment requirements<a class="headerlink" href="#deployment-requirements" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Users</strong></th>
+<th><strong>Microsoft Entra Password Protection with global banned password list</strong></th>
+<th><strong>Microsoft Entra Password Protection with custom banned password list</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloud-only users</td>
+<td>Microsoft Entra Free</td>
+<td>Microsoft Entra Premium P1 or P2</td>
+</tr>
+<tr>
+<td>Users synchronized from on-premises AD DS</td>
+<td>Microsoft Entra Premium P1 or P2</td>
+<td>Microsoft Entra Premium P1 or P2</td>
+</tr>
+<tr>
+<td>- You need an account that has Active Directory domain administrator privileges in the forest root domain to register the Windows Server Active Directory forest with Microsoft Entra.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- The Key Distribution Service must be enabled on all domain controllers in the domain that run Windows Server 2012. By default, this service is enabled via manual trigger start.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- Network connectivity must exist between at least one domain controller in each domain and at least one server that hosts the proxy service for Microsoft Entra Password Protection. This connectivity must allow the domain controller to access RPC endpoint mapper port 135 and the RPC server port on the proxy service.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code>- By default, the RPC server port is a dynamic RPC port, but it can be configured to use a static port.
+</code></pre>
+<ul>
+<li>All machines where the Microsoft Entra Password Protection proxy-service will be installed must have network access to the following endpoints:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Endpoint</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>https://login.microsoftonline.com</code></td>
+<td>Authentication requests</td>
+</tr>
+<tr>
+<td><code>https://enterpriseregistration.windows.net</code></td>
+<td>Microsoft Entra Password Protection functionality</td>
+</tr>
+</tbody>
+</table>
+<h3 id="microsoft-entra-password-protection-dc-agent-requirements">Microsoft Entra Password Protection DC agent requirements<a class="headerlink" href="#microsoft-entra-password-protection-dc-agent-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All machines where the Microsoft Entra Password Protection DC agent software will be installed must run Windows Server 2012 or later.</li>
+<li>All machines that run the Microsoft Entra Password Protection DC agent must have .NET 4.5 installed.</li>
+<li>Any Active Directory domain that runs the Microsoft Entra Password Protection DC agent service must use Distributed File System Replication (DFSR) for sysvol replication.</li>
+</ul>
+<h3 id="microsoft-entra-password-protection-proxy-service-requirements">Microsoft Entra Password Protection proxy service requirements<a class="headerlink" href="#microsoft-entra-password-protection-proxy-service-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All machines where the Microsoft Entra Password Protection proxy-service will be installed must run Windows Server 2012 R2 or later.</li>
+<li>All machines where the Microsoft Entra Password Protection proxy-service will be installed must have .NET 4.7 installed.</li>
+<li>All machines that host the Microsoft Entra Password Protection proxy-service must be configured to grant domain controllers the ability to sign into the proxy service. This ability is controlled via the "Access this computer from the network" privilege assignment.</li>
+<li>All machines that host the Microsoft Entra Password Protection proxy-service must be configured to allow outbound TLS 1.2 HTTP traffic.</li>
+<li>A <em>Global Administrator</em> or <em>Security Administrator</em> account is required to register the Microsoft Entra Password Protection proxy-service and forest with Microsoft Entra.</li>
+<li>Network access must be enabled for the set of ports and URLs specified in the Application Proxy environment setup procedures.</li>
+</ul>
+<h1 id="warning-you-should-never-install-microsoft-entra-password-protection-proxy-and-application-proxy-on-the-same-machine">WARNING You should never install Microsoft Entra Password Protection Proxy and Application Proxy on the same machine<a class="headerlink" href="#warning-you-should-never-install-microsoft-entra-password-protection-proxy-and-application-proxy-on-the-same-machine" title="Permanent link">&para;</a></h1>
+<h2 id="download-required-software">Download required software<a class="headerlink" href="#download-required-software" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Microsoft Entra Password Protection DC agent (<em>AzureADPasswordProtectionDCAgentSetup.msi</em>)</li>
+<li>Microsoft Entra Password Protection proxy (<em>AzureADPasswordProtectionProxySetup.exe</em>)</li>
+</ul>
+<h2 id="install-and-configure-the-proxy-service">Install and configure the proxy service<a class="headerlink" href="#install-and-configure-the-proxy-service" title="Permanent link">&para;</a></h2>
+<p>The Microsoft Entra Password Protection proxy-service is typically on a member server in your on-premises AD DS environment. Once installed, the Microsoft Entra Password Protection proxy-service communicates with Microsoft Entra to maintain a copy of the global and customer banned password lists for your Microsoft Entra tenant.</p>
+<p>The software installation, or uninstallation, requires a restart. This requirement is because password filter DLLs are only loaded or unloaded by a restart.</p>
+<hr />
+<h1 id="configure-smart-lockout-thresholds">Configure smart lockout thresholds<a class="headerlink" href="#configure-smart-lockout-thresholds" title="Permanent link">&para;</a></h1>
+<ul>
+<li>By default, smart lockout locks the account from sign-in attempts for one minute after 10 failed attempts.</li>
+<li>The account locks again after each subsequent failed sign-in attempt, for one minute at first and then longer in subsequent attempts</li>
+<li>Smart lockout tracks the last three bad-password hashes to avoid incrementing the lockout counter for the same password. If someone enters the same bad password multiple times, this behavior won't cause the account to lock out.</li>
+<li>Smart lockout is always on, for all Microsoft Entra ID customers</li>
+<li>Entra ID P1 or higher is required for customization</li>
+</ul>
+<p>The following considerations apply:
+* Each Microsoft Entra data center tracks lockouts independently
+* Smart lockout uses <em>familiar location</em> versus <em>unfamiliar location</em> to differentiate between a bad actor and the genuine user. 
+* Unfamiliar and familiar locations both have separate lockout counters.</p>
+<p>When the admin configures pass-through authentication, the following considerations apply:</p>
+<ul>
+<li>The Microsoft Entra lockout threshold is less than the AD DS account lockout threshold. Set the values so that the AD DS account lockout threshold is at least two or three times greater than the Microsoft Entra lockout threshold.</li>
+<li>The Microsoft Entra lockout duration must be set longer than the AD DS account lockout duration. The duration is set in seconds, while the AD duration is set in minutes.</li>
+</ul>
+<hr />
+<h1 id="implement-kerberos-and-certificate-based-authentication-in-microsoft-entra-id">Implement Kerberos and certificate-based authentication in Microsoft Entra ID<a class="headerlink" href="#implement-kerberos-and-certificate-based-authentication-in-microsoft-entra-id" title="Permanent link">&para;</a></h1>
+<ul>
+<li>You can provide single sign-on for on-premises applications published through Application Proxy</li>
+<li>Application Proxy uses Kerberos Constrained Delegation (KCD) to support these applications.</li>
+<li>The apps are secured with integrated Windows authentication.</li>
+</ul>
+<h3 id="kerberos-authentication-process-flow">Kerberos authentication process flow<a class="headerlink" href="#kerberos-authentication-process-flow" title="Permanent link">&para;</a></h3>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-sci/manage-user-authentication/media/kerberos-authentication-cdf4cd35.png">
+1. The user enters the URL to access the on premises application through Application Proxy.
+2. Application Proxy redirects the request to Microsoft Entra authentication services to preauthenticate. At this point, Microsoft Entra ID applies any applicable authentication and authorization policies, such as multifactor authentication. If the user is validated, Microsoft Entra ID creates a token and sends it to the user.
+3. The user passes the token to Application Proxy.
+4. Application Proxy validates the token and retrieves the User Principal Name (UPN) from it, and then the Connector pulls the UPN, and the Service Principal Name (SPN) through a dually authenticated secure channel.
+5. The Connector performs Kerberos Constrained Delegation (KCD) negotiation with the on premises AD, impersonating the user to get a Kerberos token to the application.
+6. Active Directory sends the Kerberos token for the application to the Connector.
+7. The Connector sends the original request to the application server, using the Kerberos token it received from AD.
+8. The application sends the response to the Connector, which is then returned to the Application Proxy service and finally to the user.</p>
+<hr />
+<h1 id="configure-microsoft-entra-user-authentication-for-virtual-machines">Configure Microsoft Entra user authentication for virtual machines<a class="headerlink" href="#configure-microsoft-entra-user-authentication-for-virtual-machines" title="Permanent link">&para;</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
